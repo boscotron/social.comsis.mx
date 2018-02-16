@@ -1,0 +1,1 @@
+<html><head><title> Sitio en mantenimiento</title><style>div{position: absolute;	width: 100%;text-align: center;	top: 5%;}</style></head><body><div><img src="<?php echo RUTA_ACTUAL.BASE_TEMPLET; ?>images/LOG2.png"></div></body></html> 
