@@ -1764,7 +1764,7 @@ body .boxed {
 -------------------------------------------------------------------*/
 .flat-footer {
     text-align: center;
-    background-image: url(../templet/images/bg-footer.png);
+    background-image: url(../../templet/images/bg-footer.png);
     color: #222;
     padding: 198px 0 100px;
     background-size: cover;

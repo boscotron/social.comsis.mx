@@ -70,12 +70,13 @@
                 <div class="iconbox style4 circle">                    
                     <div class="box-header">
                         <i class="fa fa-bell-slash-o" aria-hidden="true"></i>
-                        <div class="box-title jmy_web_div" id="tip_titulo_1" data-page="inicio"  ><a href="#">
-                            <?php echo ($data['tip_titulo_1']!='')? $data['tip_titulo_1']:'Titulo Tip '; ?>
+                        <div class="box-title jmy_web_div" id="tip_titulo_1" data-page="inicio" data-editable="no"  ><a href="#">
+                            <?php  $this->pnt('tip_titulo_1','Titulo Tip');?>
                             </a></div>
                     </div>
-                    <div class="box-content jmy_web_div" id="tip_desc_1" data-page="inicio"  >
-                       <?php echo ($data['tip_desc_1']!='')? $data['tip_desc_1']:'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt.'; ?>
+                    <div class="box-content jmy_web_div" id="" data-page="inicio"  >
+                       <?php $this->pnt('tip_desc_1','Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt.');
+                          ?>
                     </div>                        
                 </div><!-- /.iconbox -->                            
             </div><!-- /.col-md-3 -->
@@ -83,11 +84,11 @@
                 <div class="iconbox style4 circle">                    
                     <div class="box-header">
                         <i class="fa fa-bell-slash-o" aria-hidden="true"></i>
-                        <div class="box-title jmy_web_div" id="tip_titulo_2" data-page="inicio"  ><a href="#">
-                            <?php echo ($data['tip_titulo_2']!='')? $data['tip_titulo_2']:'Titulo Tip '; ?></a></div>
+                        <div class="box-title jmy_web_div" id="tip_titulo_2" data-page="inicio" data-editable="no"  ><a href="#">
+                            <?php $this->pnt('tip_titulo_2','Titulo Tip'); ?></a></div>
                     </div>
                     <div class="box-content jmy_web_div" id="tip_desc_2" data-page="inicio"  >
-                       <?php echo ($data['tip_desc_2']!='')? $data['tip_desc_2']:'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt.'; ?>
+                       <?php $this->pnt('tip_desc_2','Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt.');?>
                     </div>                        
                 </div><!-- /.iconbox -->                            
             </div><!-- /.col-md-3 -->
@@ -95,13 +96,12 @@
                 <div class="iconbox style4 circle">                    
                     <div class="box-header">
                         <i class="fa fa-bell-slash-o" aria-hidden="true"></i>
-                        <div class="box-title jmy_web_div" id="tip_titulo_3" data-page="inicio"  ><a href="#">
-                            <?php $this->pnt('paquetes_titulo','');
-                             echo ($data['tip_titulo_3']!='')? $data['tip_titulo_3']:'Titulo Tip '; ?></a></div>
+                        <div class="box-title jmy_web_div" id="tip_titulo_3" data-page="inicio" data-editable="no"  ><a href="#">
+                            <?php $this->pnt('tip_titulo_3','Titulo Tip'); ?></a></div>
                     </div>
                     <div class="box-content jmy_web_div" id="tip_desc_3" data-page="inicio"  >
-                       <?php $this->pnt('paquetes_titulo','');
-                             echo ($data['tip_desc_3']!='')? $data['tip_desc_3']:'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt.'; ?>
+                       <?php $this->pnt('tip_desc_3','Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt.');
+                            ?>
                     </div>                        
                 </div><!-- /.iconbox -->                            
             </div><!-- /.col-md-3 -->
@@ -109,16 +109,12 @@
                 <div class="iconbox style4 circle">                    
                     <div class="box-header">
                         <i class="fa fa-bell-slash-o" aria-hidden="true"></i>
-                        <div class="box-title jmy_web_div" id="tip_titulo_4" data-page="inicio"  ><a href="#">
-                            
-                            <?php $this->pnt('paquetes_titulo','');
-                             echo ($data['tip_titulo_4']!='')? $data['tip_titulo_4']:'Titulo Tip '; ?>
+                        <div class="box-title jmy_web_div" id="tip_titulo_4" data-page="inicio" data-editable="no" ><a href="#">                            
+                            <?php $this->pnt('tip_titulo_4','Titulo Tip'); ?>
                             </a></div>
                     </div>
                     <div class="box-content jmy_web_div" id="tip_desc_4" data-page="inicio"  >
-                       <?php $this->pnt('paquetes_titulo','');
-                             echo ($data['tip_desc_4']!='')? $data['tip_desc_4']:'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt.'; ?>
-                       
+                       <?php $this->pnt('tip_desc_4','Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt.'); ?>
                     </div>                        
                 </div><!-- /.iconbox -->                            
             </div><!-- /.col-md-3 -->
@@ -140,11 +136,9 @@
                         <div class="filter-tooltip">
                             Paquetes desde
                             <span class="precioPaquete jmy_web_div" id="servicios_precio_btn_1" data-page="inicio"  >
-                                <?php $this->pnt('paquetes_titulo','');
-                             echo ($data['servicios_precio_btn_1']!='')? $data['servicios_precio_btn_1']:'$200.00'; ?></span>
+                                <?php $this->pnt('servicios_precio_btn_1','$200.00'); ?></span>
                             <span class="tiempoPaquete jmy_web_div" id="servicios_tiempo_btn_1" data-page="inicio"  >
-                                <?php $this->pnt('paquetes_titulo','');
-                             echo ($data['servicios_tiempo_btn_1']!='')? $data['servicios_tiempo_btn_1']:'Semanales'; ?></span>
+                                <?php $this->pnt('servicios_tiempo_btn_1','Semanales'); ?></span>
                         </div>
                     </li>
 
@@ -153,57 +147,46 @@
                         <div class="filter-tooltip">                            
                             Paquetes desde
                             <span class="precioPaquete jmy_web_div" id="servicios_precio_btn_2" data-page="inicio"  >
-                                <?php $this->pnt('paquetes_titulo','');
-                             echo ($data['servicios_precio_btn_2']!='')? $data['servicios_precio_btn_2']:'$200.00'; ?></span>
+                                <?php $this->pnt('servicios_precio_btn_2',''); ?></span>
                             <span class="tiempoPaquete jmy_web_div" id="servicios_tiempo_btn_2" data-page="inicio"  >
-                                <?php $this->pnt('paquetes_titulo','');
-                             echo ($data['servicios_tiempo_btn_2']!='')? $data['servicios_tiempo_btn_2']:'Semanales'; ?></span>
+                                <?php $this->pnt('servicios_tiempo_btn_2','');?></span>
                         </div>
                     </li>
 
                     <li><a data-filter="diseno" href="#">Diseño</a>
                         <div class="filter-tooltip">
                             Paquetes desde
-                            <span class="precioPaquete jmy_web_div" id="servicios_precio_btn_3" data-page="inicio"  >
-                                <?php $this->pnt('paquetes_titulo','');
-                             echo ($data['servicios_precio_btn_3']!='')? $data['servicios_precio_btn_3']:'$200.00'; ?></span>
+                             <span class="precioPaquete jmy_web_div" id="servicios_precio_btn_3" data-page="inicio"  >
+                                <?php $this->pnt('servicios_precio_btn_3',''); ?></span>
                             <span class="tiempoPaquete jmy_web_div" id="servicios_tiempo_btn_3" data-page="inicio"  >
-                                <?php $this->pnt('paquetes_titulo','');
-                             echo ($data['servicios_tiempo_btn_3']!='')? $data['servicios_tiempo_btn_3']:'Semanales'; ?></span>
+                                <?php $this->pnt('servicios_tiempo_btn_3','');?></span>
                     </li>
 
                     <li><a data-filter="audiovisual" href="#">Audiovisual</a>
                         <div class="filter-tooltip">
                             Paquetes desde
                             <span class="precioPaquete jmy_web_div" id="servicios_precio_btn_4" data-page="inicio"  >
-                                <?php $this->pnt('paquetes_titulo','');
-                             $this->pnt('paquetes_titulo','');
-                             echo ($data['servicios_precio_btn_4']!='')? $data['servicios_precio_btn_4']:'$200.00'; ?></span>
+                                <?php $this->pnt('servicios_precio_btn_4',''); ?></span>
                             <span class="tiempoPaquete jmy_web_div" id="servicios_tiempo_btn_4" data-page="inicio"  >
-                                <?php $this->pnt('paquetes_titulo','');
-                             echo ($data['servicios_tiempo_btn_4']!='')? $data['servicios_tiempo_btn_4']:'Semanales'; ?></span>
+                                <?php $this->pnt('servicios_tiempo_btn_4','');?></span>
                     </li>
 
                     <li><a data-filter="app" href="#">App's</a>
                         <div class="filter-tooltip">
                             Paquetes desde
-                            <span class="precioPaquete jmy_web_div" id="servicios_precio_btn_5" data-page="inicio"  >
-                                <?php$this->pnt('paquetes_titulo','');
-                              echo ($data['servicios_precio_btn_5']!='')? $data['servicios_precio_btn_5']:'$200.00'; ?></span>
+                          <span class="precioPaquete jmy_web_div" id="servicios_precio_btn_5" data-page="inicio"  >
+                                <?php $this->pnt('servicios_precio_btn_5',''); ?></span>
                             <span class="tiempoPaquete jmy_web_div" id="servicios_tiempo_btn_5" data-page="inicio"  >
-                                <?php $this->pnt('paquetes_titulo','');
-                             echo ($data['servicios_tiempo_btn_5']!='')? $data['servicios_tiempo_btn_5']:'Semanales'; ?></span>
+                                <?php $this->pnt('servicios_tiempo_btn_5','');?></span>
                     </li>
 
                     <li><a data-filter="ecommerce" href="#">E-Commerce</a>
                         <div class="filter-tooltip">
                             Paquetes desde
-                            <span class="precioPaquete jmy_web_div" id="servicios_precio_btn_6" data-page="inicio"  >
-                                <?php $this->pnt('paquetes_titulo','');
-                             echo ($data['servicios_precio_btn_6']!='')? $data['servicios_precio_btn_6']:'$200.00'; ?></span>
+                         <span class="precioPaquete jmy_web_div" id="servicios_precio_btn_6" data-page="inicio"  >
+                                <?php $this->pnt('servicios_precio_btn_6',''); ?></span>
                             <span class="tiempoPaquete jmy_web_div" id="servicios_tiempo_btn_6" data-page="inicio"  >
-                                <?php $this->pnt('paquetes_titulo','');
-                             echo ($data['servicios_tiempo_btn_6']!='')? $data['servicios_tiempo_btn_6']:'Semanales'; ?></span>
+                                <?php $this->pnt('servicios_tiempo_btn_6','');?></span>
                     </li>
 
                 </ul><!-- /.project-filter -->
@@ -218,8 +201,7 @@
                             <div class="featured-images">
                                 <img src="<?php $this->url_templet(); ?>images/portfolio/simple/12.jpg" alt="images">
                                 <h3 class="project-title jmy_web_div" id="comsis_app" data-page="inicio" >
-                                   <?php $this->pnt('paquetes_titulo','');
-                             echo ($data['comsis_app']!='')? $data['comsis_app']:'Descripción App'; ?>
+                                   <?php $this->pnt('comsis_app','Descripción del servicio'); ?>
                                 </h3>
                                 <div class="overlay">  
                                     <ul class="portfolio-details">
@@ -234,7 +216,7 @@
                             <div class="featured-images">
                                 <img src="<?php echo RUTA_ACTUAL.BASE_TEMPLET; ?>images/portfolio/simple/3.1.jpg" alt="images">
                                 <h3 class="project-title jmy_web_div" id="comsis_redes" data-page="inicio" >
-                                    <?php echo ($data['comsis_redes']!='')? $data['comsis_redes']:'Descripción comsis redes'; ?>
+                                    <?php $this->pnt('comsis_redes','Descripción del servicio'); ?>
                                 </h3>
                                 <div class="overlay">  
                                     <ul class="portfolio-details">
@@ -249,7 +231,7 @@
                             <div class="featured-images">
                                 <img src="<?php echo RUTA_ACTUAL.BASE_TEMPLET; ?>images/portfolio/simple/9.jpg" alt="images">
                                  <h3 class="project-title jmy_web_div" id="comsis_diseno" data-page="inicio" >
-                                    <?php echo ($data['comsis_diseno']!='')? $data['comsis_diseno']:'Descripción comsis diseño'; ?>
+                                    <?php $this->pnt('comsis_diseno','Descripción del servicio'); ?>
                                 </h3>
                                 <div class="overlay">  
                                     <ul class="portfolio-details">
@@ -264,8 +246,7 @@
                             <div class="featured-images">
                                 <img src="<?php echo RUTA_ACTUAL.BASE_TEMPLET; ?>images/portfolio/simple/11.jpg" alt="images"> 
                                     <h3 class="project-title jmy_web_div" id="comsis_audiovisual" data-page="inicio" >
-                                    <?php echo ($data['comsis_audiovisual']!='')? $data['comsis_audiovisual']:'Descripción comsis audiovisual'; ?>
-                                   
+                                    <?php $this->pnt('comsis_audiovisual','Descripción del servicio'); ?>                                   
                                 </h3>
                                 <div class="overlay">  
                                     <ul class="portfolio-details">
@@ -280,8 +261,7 @@
                             <div class="featured-images">
                                 <img src="<?php echo RUTA_ACTUAL.BASE_TEMPLET; ?>images/portfolio/simple/3.3.jpg" alt="images">
                                 <h3 class="project-title jmy_web_div" id="comsis_ecommerce" data-page="inicio" >
-                                    <?php echo ($data['comsis_ecommerce']!='')? $data['comsis_ecommerce']:'Descripción comsis ecommerce'; ?>
-                                   
+                                     <?php $this->pnt('comsis_ecommerce','Descripción del servicio'); ?>
                                 </h3>
                                 <div class="overlay">  
                                     <ul class="portfolio-details">
@@ -297,8 +277,7 @@
                             <div class="featured-images">
                                 <img src="<?php echo RUTA_ACTUAL.BASE_TEMPLET; ?>images/portfolio/simple/3.4.jpg" alt="images">
                                 <h3 class="project-title jmy_web_div" id="descripcion_tecnopack" data-page="inicio" >
-                                    <?php echo ($data['descripcion_tecnopack']!='')? $data['descripcion_tecnopack']:'Descripción Tecnopack'; ?>
-                                   
+                                    <?php $this->pnt('descripcion_tecnopack','Descripción del servicio'); ?>
                                 </h3>
                                 <div class="overlay">  
                                     <ul class="portfolio-details">
@@ -313,8 +292,7 @@
                             <div class="featured-images">
                                 <img src="<?php echo RUTA_ACTUAL.BASE_TEMPLET; ?>images/portfolio/simple/3.9.jpg" alt="images">
                                 <h3 class="project-title jmy_web_div" id="descripcion_restart" data-page="inicio" >
-                                    <?php echo ($data['descripcion_restart']!='')? $data['descripcion_restart']:'Descripción restart'; ?>
-                                   
+                                    <?php $this->pnt('descripcion_restart','Descripción del servicio'); ?>
                                 </h3>
                                 <div class="overlay">  
                                     <ul class="portfolio-details">
@@ -329,8 +307,7 @@
                             <div class="featured-images">
                                 <img src="<?php echo RUTA_ACTUAL.BASE_TEMPLET; ?>images/portfolio/simple/3.533.jpg" alt="images">
                                 <h3 class="project-title jmy_web_div" id="app_web" data-page="inicio" >
-                                    <?php echo ($data['app_web']!='')? $data['app_web']:'Descripción comsis Web'; ?>
-                                   
+                                    <?php $this->pnt('app_web','Descripción del servicio'); ?>
                                 </h3>
                                 <div class="overlay">  
                                     <ul class="portfolio-details">
@@ -352,122 +329,60 @@
             <div class="col-md-12">
                 <div class="title-section text-center">
                     <h1 class="title jmy_web_div" id="paquetes_titulo" data-page="inicio"  >
-                        <?php echo ($data['paquetes_titulo']!='')? $data['paquetes_titulo']:'Título paquetes'; ?> </h1>  
+                        <?php $this->pnt('paquetes_titulo','Título paquetes'); ?>                        
+                    </h1>  
                 </div>
                 <div class="flat-spacer height30"></div>
             </div><!-- /.col-md-12 -->
-        </div>
-        
+        </div>        
         <div class="row">
             <div class="col-md-12">
-
-
-                <div class="images-box  clear-fix show">   
-                    <img src="<?php echo RUTA_ACTUAL.BASE_TEMPLET; ?>images/services/1.jpg" alt="serives"> 
+                <div class="images-box  clear-fix show">  <div class="jmy_web_div" id="paquete_img_1" data-page="inicio"> <?php $this->pnt('paquete_img_1','<img src="'.RUTA_ACTUAL.BASE_TEMPLET.'/images/services/1.jpg" alt="serives"> '); ?> </div>
                     <div class="box-content descripcionServicios">
                         <div class="box-title">
                             <a href="#" class="jmy_web_div" id="paquete_titulo_1" data-page="inicio"  data-editor="no" >
-                                <?php echo ($data['paquete_titulo_1']!='')? $data['paquete_titulo_1']:'Título paquetes'; ?> </h1>  
+                            <?php $this->pnt('paquete_titulo_1','Título paquetes'); ?>
                             </a>
                         </div>  
                         <div class="jmy_web_div" id="paquete_descripcion_1" data-page="inicio"  >
-                            <?php echo ($data['paquete_descripcion_1']!='')? $data['paquete_descripcion_1']:'Descripción corta del paquete'; ?> </h1>
+                            <?php $this->pnt('paquete_descripcion_1','Descripción corta del paquete'); ?>
                          </div>
                         <a href="#" class="box-redmore jmy_web_div" id="leer_mas" data-page="inicio" data-editor="no" >
-                            <?php echo ($data['leer_mas']!='')? $data['leer_mas']:'Leer más'; ?> </a>
+                            <?php $this->pnt('leer_mas','Leer más'); ?> </a>
                     </div>                                
                 </div><!-- /.images-box -->    
 
-                <div class="images-box  clear-fix">   
-                    <img src="<?php echo RUTA_ACTUAL.BASE_TEMPLET; ?>images/services/2.jpg" alt="serives"> 
+                <div class="images-box  clear-fix"><div class="jmy_web_div" id="paquete_img_2" data-page="inicio"> <?php $this->pnt('paquete_img_2','<img src="'.RUTA_ACTUAL.BASE_TEMPLET.'/images/services/1.jpg" alt="serives"> '); ?> </div>
                     <div class="box-content descripcionServicios">
                         <div class="box-title">
                             <a href="#" class="jmy_web_div" id="paquete_titulo_2" data-page="inicio"  data-editor="no" >
-                                <?php echo ($data['paquete_titulo_2']!='')? $data['paquete_titulo_2']:'Título paquetes'; ?> </h1>  
+                                <?php $this->pnt('paquete_titulo_2','Título paquetes'); ?>
                             </a>
                         </div>  
                         <div class="jmy_web_div" id="paquete_descripcion_2" data-page="inicio"  >
-                            <?php echo ($data['paquete_descripcion_2']!='')? $data['paquete_descripcion_2']:'Descripción corta del paquete'; ?> </h1>
+                            <?php $this->pnt('paquete_descripcion_2','Descripción corta del paquete'); ?>
                          </div>
                         <a href="#" class="box-redmore jmy_web_div" id="leer_mas" data-page="inicio" data-editor="no" >
-                            <?php echo ($data['leer_mas']!='')? $data['leer_mas']:'Leer más'; ?> </a>
+                            <?php $this->pnt('leer_mas','Leer más'); ?> </a>
                     </div>                                
                 </div><!-- /.images-box -->    
 
-                <div class="images-box  clear-fix">   
-                    <img src="<?php echo RUTA_ACTUAL.BASE_TEMPLET; ?>images/services/3.jpg" alt="serives"> 
+                <div class="images-box  clear-fix">   <div class="jmy_web_div" id="paquete_img_3" data-page="inicio"> <?php $this->pnt('paquete_img_3','<img src="'.RUTA_ACTUAL.BASE_TEMPLET.'/images/services/1.jpg" alt="serives"> '); ?> </div>
                     <div class="box-content descripcionServicios">
                         <div class="box-title">
                             <a href="#" class="jmy_web_div" id="paquete_titulo_3" data-page="inicio"  data-editor="no" >
-                                <?php echo ($data['paquete_titulo_3']!='')? $data['paquete_titulo_3']:'Título paquetes'; ?> </h1>  
+                                <?php $this->pnt('paquete_titulo_3','Título paquetes'); ?>
                             </a>
                         </div>  
                         <div class="jmy_web_div" id="paquete_descripcion_3" data-page="inicio"  >
-                            <?php echo ($data['paquete_descripcion_3']!='')? $data['paquete_descripcion_3']:'Descripción corta del paquete'; ?> </h1>
+                            <?php $this->pnt('paquete_descripcion_3','Descripción corta del paquete'); ?>
                          </div>
                         <a href="#" class="box-redmore jmy_web_div" id="leer_mas" data-page="inicio" data-editor="no" >
-                            <?php echo ($data['leer_mas']!='')? $data['leer_mas']:'Leer más'; ?> </a>
+                            <?php $this->pnt('leer_mas','Leer más'); ?> </a>
                     </div>                                
                 </div><!-- /.images-box -->
-
-
             </div><!-- /.col-md-12 -->
-        </div>
-
-        <div class="row">
-            <div class="col-md-12">
-
-
-                <div class="images-box  clear-fix">   
-                    <img src="<?php echo RUTA_ACTUAL.BASE_TEMPLET; ?>images/services/7.jpg" alt="serives"> 
-                    <div class="box-content descripcionServicios">
-                        <div class="box-title">
-                            <a href="#" class="jmy_web_div" id="paquete_titulo_4" data-page="inicio"  data-editor="no"  >
-                                <?php echo ($data['paquete_titulo_4']!='')? $data['paquete_titulo_4']:'Título paquetes'; ?> </h1>  
-                            </a>
-                        </div>  
-                        <div class="jmy_web_div" id="paquete_descripcion_4" data-page="inicio"  >
-                            <?php echo ($data['paquete_descripcion_4']!='')? $data['paquete_descripcion_4']:'Descripción corta del paquete'; ?> </h1>
-                         </div>
-                        <a href="#" class="box-redmore jmy_web_div" id="leer_mas" data-page="inicio"  data-editor="no" >
-                            <?php echo ($data['leer_mas']!='')? $data['leer_mas']:'Leer más'; ?> </a>
-                    </div>                                
-                </div><!-- /.images-box -->    
-
-                <div class="images-box  clear-fix">   
-                    <img src="<?php echo RUTA_ACTUAL.BASE_TEMPLET; ?>images/services/8.jpg" alt="serives"> 
-                    <div class="box-content descripcionServicios">
-                        <div class="box-title">
-                            <a href="#" class="jmy_web_div" id="paquete_titulo_5" data-page="inicio"  data-editor="no" >
-                                <?php echo ($data['paquete_titulo_5']!='')? $data['paquete_titulo_5']:'Título paquetes'; ?> </h1>  
-                            </a>
-                        </div>  
-                        <div class="jmy_web_div" id="paquete_descripcion_5" data-page="inicio"  >
-                            <?php echo ($data['paquete_descripcion_5']!='')? $data['paquete_descripcion_5']:'Descripción corta del paquete'; ?> </h1>
-                         </div>
-                        <a href="#" class="box-redmore jmy_web_div" id="leer_mas" data-page="inicio" data-editor="no" >
-                            <?php echo ($data['leer_mas']!='')? $data['leer_mas']:'Leer más'; ?> </a>
-                    </div>                                
-                </div><!-- /.images-box -->    
-
-                <div class="images-box  clear-fix show">   
-                    <img src="<?php echo RUTA_ACTUAL.BASE_TEMPLET; ?>images/services/9.jpg" alt="serives"> 
-                    <div class="box-content descripcionServicios">
-                        <div class="box-title">
-                            <a href="#" class="jmy_web_div" id="paquete_titulo_6" data-page="inicio"  data-editor="no" >
-                                <?php echo ($data['paquete_titulo_6']!='')? $data['paquete_titulo_6']:'Título paquetes'; ?> </h1>  
-                            </a>
-                        </div>  
-                        <div class="jmy_web_div" id="paquete_descripcion_6" data-page="inicio"  >
-                            <?php echo ($data['paquete_descripcion_6']!='')? $data['paquete_descripcion_6']:'Descripción corta del paquete'; ?> </h1>
-                         </div>
-                        <a href="#" class="box-redmore jmy_web_div" id="leer_mas" data-page="inicio" data-editor="no" >
-                            <?php echo ($data['leer_mas']!='')? $data['leer_mas']:'Leer más'; ?> </a>
-                    </div>                                
-                </div><!-- /.images-box -->
-
-            </div><!-- /.col-md-12 -->
-        </div>
+        </div>       
     </div><!-- /.container -->   
 </section>
 <!-- Blog -->

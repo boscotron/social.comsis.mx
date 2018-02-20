@@ -120,7 +120,14 @@
                                                     <li><a href="<?php $this->url_inicio(); ?>servicios/comsis-ecommerce">Comsis E-Commerce</a></li>
                                                 </ul>
                                             </li>
-                                            <li><a href="contact.html">Contacto</a></li>
+                                            <li><a href="<?php $this->url_inicio(); ?>/paquetes">paquetes</a>
+                                                <ul class="submenu">                           
+                                                    <li><a href="<?php $this->url_inicio(); ?>paquetes/paquete-local">Paquete Local</a></li>
+                                                    <li><a href="<?php $this->url_inicio(); ?>paquetes/paquete-sucursal">Paquete Sucursal</a></li>
+                                                    <li><a href="<?php $this->url_inicio(); ?>paquetes/paquete-empresas">Paquete Empresarial</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="<?php $this->url_inicio(); ?>contacto">Contacto</a></li>
                                         </ul><!-- /.menu -->
                                     </nav><!-- /.mainnav -->      
                                 </div><!-- /.nav-wrap -->

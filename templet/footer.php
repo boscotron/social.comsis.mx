@@ -68,7 +68,6 @@
     <script type="text/javascript" src="<?php echo RUTA_ACTUAL.BASE_TEMPLET; ?>javascript/jquery.magnific-popup.min.js"></script>   
     <script type="text/javascript" src="<?php echo RUTA_ACTUAL.BASE_TEMPLET; ?>javascript/jquery.flexslider-min.js"></script>   
     <script type="text/javascript" src="<?php echo RUTA_ACTUAL.BASE_TEMPLET; ?>javascript/main.js"></script>
-    <!--<script type="text/javascript" src="<?php echo RUTA_ACTUAL.BASE_TEMPLET; ?>javascript/jmyWeb.js"></script>-->
 
 
     <?php  $this->llamar_js(); ?> 

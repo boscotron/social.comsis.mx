@@ -9,7 +9,7 @@
         <div class="row">
             <div class="col-md-12">                    
                 <div class="page-title-heading">
-                    <h1 class="title jmy_web_div" id="titulo" data-page="comsis-app"><?php $this->pnt('titulo','titulo servicio'); ?></h1>
+                    <h1 class="title jmy_web_div" id="titulo" data-page="comsis-app" ><?php $this->pnt('titulo','titulo servicio'); ?></h1>
                 </div><!-- /.page-title-captions -->
                 <div class="breadcrumbs jmy_web_div" data-page="comsis-app" id="breadcrumbs"><?php $this->pnt('breadcrumbs','<ul><li> Descripción del servicio </li></ul>'); ?></div><!-- /.breadcrumbs -->   
             </div><!-- /.col-md-12 -->  

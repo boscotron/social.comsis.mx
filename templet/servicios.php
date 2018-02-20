@@ -74,7 +74,7 @@
                     <div class="portfolio-wrap clearfix">
                         <div class="item builder app ">
                             <div class="featured-images">
-                                <img src="<?php echo RUTA_ACTUAL.BASE_TEMPLET; ?>images/portfolio/simple/12.jpg" alt="images">
+                                <img src="<?php $this->url_templet(); ?>images/portfolio/simple/12.jpg" alt="images">
                                 <h3 class="project-title jmy_web_div" id="comsis_app" data-page="inicio" >
                                    <?php echo ($data['comsis_app']!='')? $data['comsis_app']:'Descripción App'; ?>
                                 </h3>
@@ -89,7 +89,7 @@
 
                         <div class="item builder redes w2">
                             <div class="featured-images">
-                                <img src="<?php echo RUTA_ACTUAL.BASE_TEMPLET; ?>images/portfolio/simple/3.1.jpg" alt="images">
+                                <img src="<?php $this->url_templet(); ?>images/portfolio/simple/3.1.jpg" alt="images">
                                 <h3 class="project-title jmy_web_div" id="comsis_redes" data-page="inicio" >
                                     <?php echo ($data['comsis_redes']!='')? $data['comsis_redes']:'Descripción comsis redes'; ?>
                                 </h3>
@@ -104,7 +104,7 @@
 
                         <div class="item electric diseno">
                             <div class="featured-images">
-                                <img src="<?php echo RUTA_ACTUAL.BASE_TEMPLET; ?>images/portfolio/simple/9.jpg" alt="images">
+                                <img src="<?php $this->url_templet(); ?>images/portfolio/simple/9.jpg" alt="images">
                                  <h3 class="project-title jmy_web_div" id="comsis_diseno" data-page="inicio" >
                                     <?php echo ($data['comsis_diseno']!='')? $data['comsis_diseno']:'Descripción comsis diseño'; ?>
                                 </h3>
@@ -119,7 +119,7 @@
 
                          <div class="item builder audiovisual">
                             <div class="featured-images">
-                                <img src="<?php echo RUTA_ACTUAL.BASE_TEMPLET; ?>images/portfolio/simple/11.jpg" alt="images"> 
+                                <img src="<?php $this->url_templet(); ?>images/portfolio/simple/11.jpg" alt="images"> 
                                     <h3 class="project-title jmy_web_div" id="comsis_audiovisual" data-page="inicio" >
                                     <?php echo ($data['comsis_audiovisual']!='')? $data['comsis_audiovisual']:'Descripción comsis audiovisual'; ?>
                                    
@@ -135,7 +135,7 @@
 
                         <div class="item electric ecommerce">
                             <div class="featured-images">
-                                <img src="<?php echo RUTA_ACTUAL.BASE_TEMPLET; ?>images/portfolio/simple/3.3.jpg" alt="images">
+                                <img src="<?php $this->url_templet(); ?>images/portfolio/simple/3.3.jpg" alt="images">
                                 <h3 class="project-title jmy_web_div" id="comsis_ecommerce" data-page="inicio" >
                                     <?php echo ($data['comsis_ecommerce']!='')? $data['comsis_ecommerce']:'Descripción comsis ecommerce'; ?>
                                    
@@ -152,7 +152,7 @@
 
                         <div class="item electric hammer">
                             <div class="featured-images">
-                                <img src="<?php echo RUTA_ACTUAL.BASE_TEMPLET; ?>images/portfolio/simple/3.4.jpg" alt="images">
+                                <img src="<?php $this->url_templet(); ?>images/portfolio/simple/3.4.jpg" alt="images">
                                 <h3 class="project-title jmy_web_div" id="descripcion_tecnopack" data-page="inicio" >
                                     <?php echo ($data['descripcion_tecnopack']!='')? $data['descripcion_tecnopack']:'Descripción Tecnopack'; ?>
                                    
@@ -168,7 +168,7 @@
 
                         <div class="item builder painting ">
                             <div class="featured-images">
-                                <img src="<?php echo RUTA_ACTUAL.BASE_TEMPLET; ?>images/portfolio/simple/3.9.jpg" alt="images">
+                                <img src="<?php $this->url_templet(); ?>images/portfolio/simple/3.9.jpg" alt="images">
                                 <h3 class="project-title jmy_web_div" id="descripcion_restart" data-page="inicio" >
                                     <?php echo ($data['descripcion_restart']!='')? $data['descripcion_restart']:'Descripción restart'; ?>
                                    
@@ -184,7 +184,7 @@
 
                         <div class="item builder painting w2">
                             <div class="featured-images">
-                                <img src="<?php echo RUTA_ACTUAL.BASE_TEMPLET; ?>images/portfolio/simple/3.533.jpg" alt="images">
+                                <img src="<?php $this->url_templet(); ?>images/portfolio/simple/3.533.jpg" alt="images">
                                 <h3 class="project-title jmy_web_div" id="app_web" data-page="inicio" >
                                     <?php echo ($data['app_web']!='')? $data['app_web']:'Descripción comsis Web'; ?>
                                    

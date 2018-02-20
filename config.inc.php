@@ -1,14 +1,29 @@
 <?php
-/* Detalles de diseño */ 
-define(	"BASE_TEMPLET","templet/"); 
-define(	"BASE_APP","app/"); 
-define(	"RUTA_ACTUAL","http://local.social.comsis.mx/"); 
-define(	"TEMPLET_HOME","inicio"); 
-define(	"TEMPLET_HEADER","header.php"); 
-define(	"TEMPLET_FOOTER","footer.php"); 
+/* RUTAS DE ACCESO */
+define(	"RUTA_ACTUAL","http://local.social.comsis.mx/");  // URL actual del sistema
+define(	"BASE_TEMPLET","templet/"); 			// Ruta donde se aloje el tema o templet
+define(	"BASE_APP","app/"); 					// Ruta de la aplicacion
+define(	"BASE_ARCHIVO","att/"); 				// Ruta a guardar los archivos 
+define(	"BASE_ARCHIVOS_THUMS","att/thums/"); 	// Ruta a guardar los archivos thums
+/* DEFINICIONES DEL TEMA O TEMPLET */
+define(	"TEMPLET_HOME","inicio"); 			// Archivo a cargar de inicio
+define(	"TEMPLET_HEADER","header.php"); 	// Define el archivo header
+define(	"TEMPLET_FOOTER","footer.php"); 	// Define el archivo de footer
 define(	"TEMPLET_MANTENIMIENTO","en_construccion.php"); 
-define(	"TEMPLET_404",'error404.php'); 
-define(	"ESTADO_WEB","PUBLICO");  // PUBLICO, MANTENIMIENTO 
+define(	"TEMPLET_404",'error404.php'); 		// Página default de error 404
+define(	"ESTADO_WEB","PUBLICO");  			// PUBLICO, MANTENIMIENTO 
+/* REGLAS DEL ALMACENAMIENTO DE ARCHIVOS */
+define("MAX_UPLOAD",20);			// Tamaño máximo de subida de archivos, expesada en Mb
+define("MAX_IMG_WIDTH",0);			// En pixeles, si el valor es 0 no tendra limite
+define("MAX_IMG_HEIGHT",0);			// En pixeles, si el valor es 0 no tendra limite
+// Cambio automático de tamaño //
+// Si configura IMG_RESIZING en true, el script convierte todas las imágenes cargadas exactamente a IMG_RESIZING_WIDTH x IMG_RESIZING_HEIGHT dimension
+// Si establece ancho o alto en 0, el script calcula automáticamente la otra dimensión
+// Es posible que si sube imágenes muy grandes, la secuencia de comandos no funcione para superar este aumento la configuración de php de la memoria y el límite de tiempo
+define("IMG_RESIZING",true);		// Activa o desactiva el cambio de tamaño de la imagen
+define("IMG_RESIZING_WIDTH",900);	// Tamaño maximo de ancho a convertir, expesada en px 
+define("IMG_RESIZING_HEIGHT",0);	// Tamaño maximo de alto a convertir, expesada en px
+
 /*Licencia JMY CONNECT*/
 define(	"JMY_SERVER","http://comsis.mx/app/update.php"); 
 define(	"JMY_KEY","8d7db37489d2aa7c76d739cac701d50a"); 
@@ -31,4 +46,5 @@ define("PAGE_FOOTER","footer"); // ACT
 /*------ no modificar a partir de este punto ------*/
 define("RAIZ_TEMPLET",RUTA_ACTUAL.BASE_TEMPLET);
 define("RUTA_APP",BASE_APP);
-require(BASE_APP.'h.php'); 
+$_SESSION['session']['TOKEN']="temp001";
+ 

@@ -74,22 +74,31 @@ if($gt['peticion']=='instalar'){ $jmyWeb->pre(["p"=>$jmy->db([$tabla])]); }else{
 
 			$out = $jmy->ver([	
 				"TABLA"=>$tabla, 		
-				"ID_F"=>$o['otKey'][0]
+				"ID_F"=>'blog_'.$o['otKey'][0]
 			]);
+			
+			
 			$out = is_array($out['ot'])?$out['ot']:["error"=>"no encontrado"];
+			
 			$out['id']=$o['otKey'][0];
+			
 			$out['id_page']="blog_".$o['otKey'][0];
+
+			$t = $jmyWeb -> cargar([ "pagina"=>$out['id_page'],
+									 "tabla"=>$tabla 
+									]);
+
 			if(in_array('pre',$pet)){				
+				$jmyWeb ->pre(['p'=>$out,'t'=>'TITULO_ARAY']);
+				$jmyWeb ->pre(['p'=>$t,'t'=>'TTT']);
 				$jmyWeb ->pre(["p"=>$out,"t"=>"Variables disponibles en $data"]);
 			}else{
-				$jmyWeb ->cargar_vista(["url"=>"blog-single.php","data"=>$out]);
+				$jmyWeb -> cargar_vista(["url"=>"blog-single.php","data"=>$out]);
 			}
 
 		}else{
 			$jmyWeb ->cargar_vista(["url"=>"error404.php"]);
 		}
-
-
 		//$out = $jmyWeb->cargar(["pagina"=>$nombre]);
 		//$out = $print[ot][$nombre];
 		
