@@ -106,8 +106,8 @@ class JMY3WEB extends JMY3MySQL{
 		global $modoEdicion;
 		$data = $d["data"];
 		if($modoEdicion){			
-			$this->cargar_js(['url'=>BASE_APP.'js/ckeditorN/adapters/jquery.js']); // funciones jmy 
 			$this->cargar_js(['url'=>BASE_APP.'js/ckeditorN/ckeditor.js']); // funciones jmy 
+			$this->cargar_js(['url'=>BASE_APP.'js/ckeditorN/adapters/jquery.js']); // funciones jmy 
 			$this->cargar_js(['url'=>BASE_APP.'js/jmy/jmyWeb.js']); // funciones jmy 
 		}
 		if(file_exists(BASE_TEMPLET.TEMPLET_HEADER)){
