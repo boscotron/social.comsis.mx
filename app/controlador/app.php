@@ -21,26 +21,27 @@ $out=[
 	
 					
 	"guardar"=>$jmy->guardar([	"TABLA"=>"PRODUCTOS", // STRING
-								"ID_F"=>[$get['id']], // Array
-								"A_D"=>TRUE, 
+								"ID"=>[$get['id']], // Array
+								"COLUMNAS"=>['nombre'], // Array
+								"AGREGAR_COLUMNAS"=>TRUE, 
 								"GUARDAR"=>$get['post']['CAMPOS'],
 					]),
 	
 	"ver"=>$jmy->ver([	"TABLA"=>$get['post']['TABLA'], // STRING
-						//"ID_D"=>["NOMBRE","APELLIDO","SEXO","SEXO"], // ARRAY OPCIONAL
-						"ID_F"=>$get['post']['TABLA'], // STRING OPCIONAL
-						//"SALIDA"=>"ID_F", // STRING OCIONAL ARRAY, ID_F, CONTADOR
-						//"ID_V"=>[5,6], // ARRAY OPCIONAL
-						//"ID_S"=>[7,8], // ARRAY OPCIONAL
-						//"LIKE_V"=>["angora","luciernaga"], // ARRAY OPCIONAL
-						//"LIKE_V_OPER"=>"AND" // STRING OPCIONAL
+						"ID"=>$get['post']['TABLA'], // STRING OPCIONAL
+						//"COLUMNAS"=>["NOMBRE","APELLIDO","SEXO","SEXO"], // ARRAY OPCIONAL
+						//"BUSQUEDA"=>["angora","luciernaga"], // ARRAY OPCIONAL
+						//"VARIABLE"=>[5,6], // BUSCA POR VARIALBES EXACTAS
+						//"LIKE_V_OPER"=>"AND" // STRING OPCIONAL OPERADOR PARA BUSQUEDA ENTRE OR Y AND ,OR DEFAULT
+						//"SALIDA"=>"ID_F", // STRING OCIONAL ARRAY, ID_F, CONTADOR // Permite que el regreso del array en diferentes acomds y resultados
+						//"ESTADO"=>[0,1], // ARRAY OPCIONAL Filtra estados (0 borrado, 1 activo)
 					]),				
 	/*				
 	"borrar"=>$jmy->borrar([	"TABLA"=>"PRODUCTOS", // STRING
-								"ID_D"=>["APELLIDO"], // ARRAY 
-								"ID_F"=>$ID_F, // STRING 
+								"COLUNAS"=>["APELLIDO"], // ARRAY 
+								"ID"=>$ID, // STRING 
 					]),
-	"ver2"=>$jmy->ver([	"TABLA"=>"PRODUCTOS", // STRING
+	"ver2_codigo_antiguo"=>$jmy->ver([	"TABLA"=>"PRODUCTOS", // STRING
 						"ID_D"=>["NOMBRE","APELLIDO","SEXO","SEXO"], // ARRAY OPCIONAL
 						"ID_F"=>$ID_F, // STRING OPCIONAL
 						//"ID_V"=>[5,6], // ARRAY OPCIONAL

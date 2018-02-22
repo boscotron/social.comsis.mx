@@ -10,13 +10,13 @@ class JMY3WEB extends JMY3MySQL{
   	global $tabla;
   	$tabla = "vistaweb";
   	global $modoEdicion;
-  	$modoEdicion = 1;
+  	$modoEdicion = MODO_DESAROLLADOR;
 	 //$_SESSION['JMY3WEB']['add_js']=[];
 
   	parent::db([$tabla]); // Verificamos que exista la tabla, de nos er así el sistema la crea
   }
-	public function url_templet($d){ if($d['return']){ return RUTA_ACTUAL.BASE_TEMPLET; }else{echo RUTA_ACTUAL.BASE_TEMPLET;} }
-	public function url_inicio(){ echo RUTA_ACTUAL; }
+	public function url_templet($d=[]){ if($d['return']){ return RUTA_ACTUAL.BASE_TEMPLET; }else{echo RUTA_ACTUAL.BASE_TEMPLET;} }
+	public function url_inicio($d=[]){ if($d['return']){ return RUTA_ACTUAL; }else{echo RUTA_ACTUAL;}  }
   
   	public function archivos($d=[]){ 
   		/* 
@@ -148,6 +148,7 @@ class JMY3WEB extends JMY3MySQL{
 				if(in_array($_SESSION['JMY3WEB']['add_js'][$i],$_SESSION['JMY3WEB']['cargar_js_borrar']))
 					unset($_SESSION['JMY3WEB']['add_js'][$i]);
 			}
+			unset($_SESSION['JMY3WEB']['add_js']);
 			echo $tmp;
 		}
 	}

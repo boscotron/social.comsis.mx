@@ -1,6 +1,9 @@
 <?php 
 class JMY3MySQL {
   public function guardar($d=[]){
+    $d['ID_F']=($d['ID']!='')?$d['ID']:$d['ID_F'];
+    $d['ID_D']=($d['COLUMNAS']!='')?$d['COLUMNAS']:$d['ID_D'];
+    $d['A_D']=($d['AGRGAR_COLUMNAS']!='')?$d['AGRGAR_COLUMNAS']:$d['A_D'];
     $c=1;$r=['TABLA'];//Buscar antes de guardar
     for($i=0;$i<count($r);$i++){ $c= ( ($d[$r[$i]]!='' || is_array($d[$r[$i]]))&&$c==1)?1:0;}
     if($c){$g=$d["GUARDAR"];
@@ -12,6 +15,7 @@ class JMY3MySQL {
       for($i=0;$i<count($colKey);$i++){$tm.='';$ID_D[] = $col['o']['n'][$colKey[$i]]; }     
 
       $ver =($d["TABLA"]!=''&&$d["ID_F"]!='')?$this->ver(["TABLA"=>$d["TABLA"],"ID_D"=>$ID_D,"ID_F"=>$IDF]):[];
+      //Helper -------------------------------------------------------------------------------------------------------AQUI PNEDEJO!!!!
       $tmb=($IDF!='')?$IDF:'';
       $tm=(is_array($ver['ot'])&&$IDF!='')?$ver['ot'][$tmb]:[];    
       $tmkey=(is_array($tm))?array_keys($tm):[];
@@ -45,6 +49,8 @@ class JMY3MySQL {
         "colKey"=> $colKey,"col"=> $col]; 
   }   
   public function borrar($d=[]){
+    $d['ID_F']=($d['ID']!='')?$d['ID']:$d['ID_F'];
+    $d['ID_D']=($d['COLUMNAS']!='')?$d['COLUMNAS']:$d['ID_D'];
     $c=1;$r=['TABLA','ID_D','ID_F'];//Buscar antes de guardar    
     for($i=0;$i<count($r);$i++){$c=(($d[$r[$i]]!=''||is_array($d[$r[$i]]))&&$c==1)?1:0;}
     if($c){$d['b']=1;$ot=$this->guardar($d);
@@ -67,7 +73,13 @@ class JMY3MySQL {
             }}}}else{$error="Faltan Datos";}          
     return["o"=>$o,"error"=>$error];
   }
-  public function ver($d=[]){
+  public function ver($d=[]){    
+    $d['ID_F']=($d['ID']!='')?$d['ID']:$d['ID_F'];
+    $d['COL']=($d['COLUMNAS']!='')?$d['COLUMNAS']:$d['COL'];
+    $d['A_D']=($d['AGRGAR_COLUMNAS']!='')?$d['AGRGAR_COLUMNAS']:$d['A_D'];
+    $d['ID_S']=($d['ESTADO']!='')?$d['ESTADO']:$d['ID_S'];
+    $d['LIKE_V']=($d['BUSQUEDA']!='')?$d['BUSQUEDA']:$d['LIKE_V'];
+    $d['V']=($d['VALOR']!='')?$d['VALOR']:$d['V'];
     $w='';$wa=0;$s=['ID_F','ID_D','V'];$pr=$d["TABLA"];$d['ID_S']=($d['ID_S']!='')? $d['ID_S']:1;
     if(count($d['COL'])>0){
       $tmp = $this->col($d['COL'],0,"NAME","Error al solcitar columnas");

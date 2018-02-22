@@ -1,5 +1,5 @@
 <?php
- 
+if(MODO_DESAROLLADOR) {
  echo $jmyWeb->archivos([	'ruta'=>'carpeta/',
 					'height'=>'500',
 					'width'=>'100%',
@@ -15,6 +15,9 @@
 								//'des_breadcrumb'=>true,
 						]
 			]);
+}else{
+	$jmyWeb ->cargar_vista(["url"=>"error404.php"]);	
+}
 
 //$jmyWeb ->cargar_vista(["url"=>"contacto.php"]);
 

@@ -1,9 +1,11 @@
 <?php
-$this->pre(['p'=>$data]);
+
+//$this->pre(['p'=>$data,'t'=>'Variables disponibles']);
 $blog_templet = $data['blog_templet'];
+$blog = $data['resultados'];
 ?>
 <!-- Page title -->
-<div class="page-title">
+<div class="page-title background2">
     <div class="overlay"></div>
     <div class="container">
         <div class="row">
@@ -24,52 +26,39 @@ $blog_templet = $data['blog_templet'];
 </div><!-- /.page-title --> 
 
 <!-- Blog posts -->
-<section class="main-content blog-posts">
+<section class="main-content blog-posts background4 background_bottom">
     <div class="container">
         <div id="jmy_web_agregar_blog"></div>
         <div class="row">
             <div class="wrap-content-post">
                 <div class="post-wrap">
-                    
-                    <article class="post clearfix">
-                        <div class="featured-post">
-                            <img src="<?php echo RUTA_ACTUAL.BASE_TEMPLET; ?>images/blog/1.jpg" alt="image">
-                            <ul class="post-comment">           
-                                <li class="entry-month">Au</li>
-                                <li class="entry-day"> 16</li>
-                                <li class="entry-year">2016</li>
-                            </ul><!-- /.post-comment -->
-                        </div><!-- /.feature-post -->
-                        <div class="content-post">
-                            <h2 class="title-post"><a href="blog-single.html">Client branding project</a></h2>
-                            <div class="entry-post excerpt">                              
-                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua...                                        
-                                </p>
-                                <div class="more-link">
-                                <a href="blog-single.html">Read more </a>
-                                </div>
-                            </div>
-                        </div><!-- /.content-post -->
-                    </article>                         
-
-                    <article class="post clearfix">
-                        <div class="featured-post">
-                            <img src="<?php echo RUTA_ACTUAL.BASE_TEMPLET; ?>images/blog/3.jpg" alt="image">
-                            <ul class="post-comment">           
-                                <li class="entry-month">July</li>
-                                <li class="entry-day"> 16</li>
-                                <li class="entry-year">2016</li>
-                            </ul><!-- /.post-comment -->
-                        </div><!-- /.feature-post -->
-                        <div class="content-post">
-                            <h2 class="title-post"><a href="blog-single.html">Thank you from us</a></h2> 
-                            <div class="entry-post excerpt">                              
-                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua...
-                                </p>
-                                <div class="more-link"><a href="blog-single.html">Read more</a></div>
-                            </div>
-                        </div><!-- /.content-post -->
-                    </article>                           
+                    <?php
+                    for($i=0;$i<count($blog['otKey']);$i++){
+                        $tmp=$blog['ot'][$blog['otKey'][$i]];
+                        if($tmp['url']!='' && $tmp['titulo']!='' ){
+                            $t =explode('src="', $tmp['imagen']);
+                            $t =explode('"', $t[1]);
+                            $tmp['imagen']=$t[0];
+                            $img=($tmp['imagen']!='')?$tmp['imagen']:RUTA_ACTUAL.BASE_TEMPLET.'images/blog/1.jpg';
+                            echo '<article class="post clearfix">
+                                <div class="featured-post">
+                                    <img src="'.$img.'" alt="image">
+                                    <ul class="post-comment">           '.$tmp['fecha'].'
+                                    </ul><!-- /.post-comment -->
+                                </div><!-- /.feature-post -->
+                                <div class="content-post">
+                                    <h2 class="title-post"><a href="'.RUTA_ACTUAL.'blog/'.$tmp['url'].'">'.$tmp['titulo'].'</a></h2>
+                                    <div class="entry-post excerpt">                              
+                                        <p>'.$tmp['subtitulo'].'
+                                        </p>
+                                        <div class="more-link">
+                                        <a href="'.RUTA_ACTUAL.'blog/'.$tmp['url'].'">Leer más</a>
+                                        </div>
+                                    </div>
+                                </div><!-- /.content-post -->
+                            </article>';
+                        }
+                    }?>
                     
                 </div><!-- /.post-wrap -->  
                  <div class="blog-pagination">

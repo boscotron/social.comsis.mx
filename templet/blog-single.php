@@ -5,11 +5,11 @@
    // $this ->pre(['p'=>$data,'t'=>'data']);
    // $this ->pre(['p'=>$blogS,'t'=>'blogS']);
    // $this ->pre(['p'=>$data['id'],'t'=>'blogS']);
-    $blog = "blog_".$data['id'];
+    $blog = $data['id'];
    // echo $blog;
 ?>
 <!-- Page title -->
-<div class="page-title">
+<div class="page-title background2">
     <div class="overlay"></div>
     <div class="container">
         <div class="row">
@@ -19,9 +19,7 @@
                 </div><!-- /.page-title-captions -->
                 <div class="breadcrumbs jmy_web_div" data-tabla="blog" data-page="<?php echo $blog; ?>" id="subtitulo" ><?php $this->pnt('subtitulo','
                     <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="blog.html">Welcome to our blog</a></li>
-                        <li> Blog Large Image</li>
+                        <li>Descripción corta</li>
                     </ul>'); ?>
                 </div><!-- /.breadcrumbs -->   
             </div><!-- /.col-md-12 -->  
@@ -30,37 +28,31 @@
 </div><!-- /.page-title --> 
 
 <!-- Blog posts -->
-<section class="main-content blog-posts blog-single">
+<section class="main-content blog-posts blog-single  background6">
     <div class="container">
         <div class="row">
             <div class="wrap-content-post">
                 <div class="post-wrap">
                     <article class="post clearfix">
-                        <div class="featured-post jmy_web_div" id="encabezado" data-page="<?php echo $blog; ?>" data-tabla="blog">
-                            <?php $this->pnt('encabezado','
-                            <img src="'.$this->url_templet(["return"=>true]).'images/blog/1.jpg" alt="image">
-                            <ul class="post-comment">           
-                                <li class="entry-month">'.date('m').'</li>
-                                <li class="entry-day ">'.date('d').'</li>
-                                <li class="entry-year">'.date('Y').'</li>
-                                </li>
-                            </ul><!-- /.post-comment -->'); ?>
+                        <div class="featured-post jmy_web_div" id="imagen" data-page="<?php echo $blog; ?>" data-tabla="blog">
+                            <?php $this->pnt('imagen','
+                            <img src="'.$this->url_templet(["return"=>true]).'images/blog/1.jpg" alt="image">'); ?>
                         </div><!-- /.feature-post -->
 
                         <div class="content-post">
-                            <div class="jmy_web_div" id="cabeza" data-page="<?php echo $blog; ?>" tabla="blog">
-                                <?php $this->pnt('cabeza','
-                                <h2 class="title-post">Sub Titulo</h2>                          
+                            <div class="jmy_web_div" id="cabeza" data-page="<?php echo $blog; ?>" data-tabla="blog">
+                                
+                                <h2 class="title-post jmy_web_div" id="fecha" data-page="<?php echo $blog; ?>" data-tabla="blog" data-editor="no"><?php $this->pnt('fecha',date('Y').'/'.date('m').'/'.date('d')); ?></h2>                          
                                 <ul class="meta-post clearfix">
                                     <li class="author">
-                                        <a href="#">Nombre del autor</a>    
+                                        <a href="#" class=" jmy_web_div" id="nombre_autor" data-page="<?php echo $blog; ?>" data-tabla="blog" data-editor="no"> <?php $this->pnt('nombre_autor','Nombre del autor'); ?></a>    
                                     </li>
-                                    <li class="categories" ><a href="#">Tag 2</a>, <a href="#">Tag 1</a>
+                                    <li class="categories jmy_web_div bsk_tags" id="tags" data-page="<?php echo $blog; ?>" data-tabla="blog" data-editor="no"> <?php $this->pnt('tags','Tag 1, Tag 2, separado por comas'); ?>
                                     </li>
-                                </ul><!-- /.meta-post -->'); ?>
+                                </ul><!-- /.meta-post -->
                             </div>
 
-                            <div class="entry excerpt jmy_web_div" id="post" data-page="<?php echo $blog; ?>" tabla="blog"><?php $this->pnt('post','<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet. Dolore magna aliquam erat volutpat sit amet, consectetuer adipiscing elit, sed diam nonumm. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet. Dolore magna aliquam erat volutpat sit amet, consectetuer adipiscing elit, sed diam nonumm.
+                            <div class="entry excerpt jmy_web_div" id="post" data-page="<?php echo $blog; ?>" data-tabla="blog"><?php $this->pnt('post','<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet. Dolore magna aliquam erat volutpat sit amet, consectetuer adipiscing elit, sed diam nonumm. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet. Dolore magna aliquam erat volutpat sit amet, consectetuer adipiscing elit, sed diam nonumm.
                                 </p>
                                 <blockquote>                                        
                                     Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet. Dolore magna aliquam erat volutpat.
@@ -87,17 +79,8 @@
             </div><!-- /.content-post -->  
 
             <div class="sidebar-post">
-                <div class="sidebar">
-                    <div class="widget widget_search">
-                        <form role="search" method="get" class="search-form" action="#">
-                            <label>                                    
-                                <input type="search" class="search-field" placeholder="Enter your search ..." value="" name="s">
-                            </label>
-                            <input type="submit" class="search-submit" value="">
-                        </form>                            
-                    </div><!-- /.widget-search -->
 
-                    <div class="widget widget_text widget_info">
+                    <div class="widget widget_text widget_info lateral-blog">
                         <h5 class="widget-title">About Me</h5>
                         <div class="textwidget">                                
                             <p>Sed pellentesque nibh enim, quis euismod enim lacinia nec. Phasellus quam diam, semper in erat eu. Consectetur adipiscing elit. Sed pellentesque nibh enim, quis euismod enim lacinia nec.</p>
@@ -111,7 +94,7 @@
                         </div><!-- /.textwidget -->
                     </div>                            
 
-                    <div class="widget widget-recent-news">
+                    <div class="widget widget-recent-news lateral-blog">
                         <h5 class="widget-title">Latest Posts</h5>
                         <ul class="popular-news clearfix">
                             <li>
@@ -148,7 +131,7 @@
                         </ul><!-- /.popular-news -->
                     </div><!-- /.widget-popular-news -->
 
-                    <div class="widget widget_tag">
+                    <div class="widget widget_tag lateral-blog">
                         <h5 class="widget-title">Tags</h5>
                         <div class="tag-list">
                             <a class="active" href="#">Graphic Design</a>

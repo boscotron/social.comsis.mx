@@ -9,13 +9,12 @@ if(in_array('pre',$pet)){
 	$jmyWeb ->pre(['p'=>$out,'t'=>'PRE']);
 }else{
 	if($url!=''){
-		$jmyWeb->cargar(["pagina"=>$url]);
-		$out['pagina']=$url;
-		echo $jmyWeb ->cargar_vista(["url"=>"servicios-detalles.php","data"=>$out]);	
+		$jmyWeb->cargar(["pagina"=>$url]);		
+		echo $jmyWeb ->cargar_vista(["url"=>$url.".php","data"=>$out]);	
 	}else{
 		$out = $jmyWeb->cargar(["pagina"=>"inicio"]);
 		$out = $print[ot]['inicio'];
-		echo $jmyWeb ->cargar_vista(["url"=>"servicios.php","data"=>$out]);
+		echo $jmyWeb ->cargar_vista(["url"=>"paquetes.php","data"=>$out]);
 	}
 }
 ?>

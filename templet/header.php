@@ -41,10 +41,11 @@
 <body class="header_sticky home4 has-top"> 
     <!-- Preloader -->
     <div id="jmy_web"></div>
+    <div id="jmy_web_tools"></div>
     <div id="botonWhastAPP">
         <div class="col-md-3 text-right">
             <div class="textwidget"><p class="get-appointment">
-                <a href="https://api.whatsapp.com/send?phone=5215513709088&text=Hola,%20me%20interesa%20saber%20mas%20sobre%20tus%20servicios" id="btn_whatsapp" class="sombraObscura"><i class="fa fa-whatsapp rebote"  style="font-size: 40px"> </i> Mandanos un mensaje</a> 
+                <a href="https://api.whatsapp.com/send?phone=5215513709088&text=Hola,%20estoy%20interesado%20en%20cotizar%20un%20proyecto" id="btn_whatsapp" class="sombraObscura"><i class="fa fa-whatsapp rebote"  style="font-size: 40px"> </i> Envíanos un mensaje</a> 
             </p></div>
         </div>        
     </div>
@@ -83,7 +84,7 @@
                         </div><!-- /.col-md-10 -->       
                         <div class="col-md-3 text-right">
                             <div class="textwidget"><p class="get-appointment">
-                                <a href="https://api.whatsapp.com/send?phone=5215513709088&text=Hola,%20me%20interesa%20saber%20mas%20sobre%20tus%20servicios" id="btn_whatsapp" class="sombraObscura"><i class="fa fa-whatsapp"  style="font-size: 40px"> </i> Mandanos un mensaje</a> 
+                                <a href="https://api.whatsapp.com/send?phone=5215513709088&text=Hola,%20estoy%20interesado%20en%20cotizar%20un%20proyecto" id="btn_whatsapp" class="sombraObscura"><i class="fa fa-whatsapp"  style="font-size: 40px"> </i> Envíanos un mensaje</a> 
                             </p></div>
                         </div>        
                     </div><!-- /.row -->
@@ -120,11 +121,11 @@
                                                     <li><a href="<?php $this->url_inicio(); ?>servicios/comsis-ecommerce">Comsis E-Commerce</a></li>
                                                 </ul>
                                             </li>
-                                            <li><a href="<?php $this->url_inicio(); ?>/paquetes">paquetes</a>
+                                            <li><a href="<?php $this->url_inicio(); ?>paquetes">paquetes</a>
                                                 <ul class="submenu">                           
                                                     <li><a href="<?php $this->url_inicio(); ?>paquetes/paquete-local">Paquete Local</a></li>
                                                     <li><a href="<?php $this->url_inicio(); ?>paquetes/paquete-sucursal">Paquete Sucursal</a></li>
-                                                    <li><a href="<?php $this->url_inicio(); ?>paquetes/paquete-empresas">Paquete Empresarial</a></li>
+                                                    <li><a href="<?php $this->url_inicio(); ?>paquetes/paquete-empresa">Paquete Empresa</a></li>
                                                 </ul>
                                             </li>
                                             <li><a href="<?php $this->url_inicio(); ?>contacto">Contacto</a></li>

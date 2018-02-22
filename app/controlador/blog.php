@@ -3,6 +3,8 @@
 
 Instalacion, ingrese a la ruta  http://TUHOST.COM/blog/instalar
 
+Para crear nuevos posts use la url: http://TUHOST.COM/blog/NOMBRE-DE-TU-POST/guardar
+
 */
 $gt = $_GET;
 
@@ -44,7 +46,7 @@ if($gt['peticion']=='instalar'){ $jmyWeb->pre(["p"=>$jmy->db([$tabla])]); }else{
 				];
 			$g =$jmy->guardar([	
 				"TABLA"=>$tabla, // STRING
-				"ID_F"=>$o['otKey'][0], // Array
+				"ID_F"=>($o['otKey'][0]!='')?$o['otKey'][0]:uniqid(), // Array
 				"A_D"=>TRUE, 
 				"GUARDAR"=>$g,
 			]);
@@ -74,7 +76,7 @@ if($gt['peticion']=='instalar'){ $jmyWeb->pre(["p"=>$jmy->db([$tabla])]); }else{
 
 			$out = $jmy->ver([	
 				"TABLA"=>$tabla, 		
-				"ID_F"=>'blog_'.$o['otKey'][0]
+				"ID_F"=>$o['otKey'][0]
 			]);
 			
 			
@@ -82,7 +84,7 @@ if($gt['peticion']=='instalar'){ $jmyWeb->pre(["p"=>$jmy->db([$tabla])]); }else{
 			
 			$out['id']=$o['otKey'][0];
 			
-			$out['id_page']="blog_".$o['otKey'][0];
+			$out['id_page']=$o['otKey'][0];
 
 			$t = $jmyWeb -> cargar([ "pagina"=>$out['id_page'],
 									 "tabla"=>$tabla 
@@ -101,15 +103,18 @@ if($gt['peticion']=='instalar'){ $jmyWeb->pre(["p"=>$jmy->db([$tabla])]); }else{
 		}
 		//$out = $jmyWeb->cargar(["pagina"=>$nombre]);
 		//$out = $print[ot][$nombre];
-		
+		//$jmyWeb ->pre(['p'=>$out,'t'=>'TITULO_ARAY']);
 	}else{
 		$out = $jmy->ver([	
-			"TABLA"=>"vistaweb", 		
-			"ID_F"=>'blog'
+			"TABLA"=>"blog", 		
+			"COLUMNAS"=>["titulo","subtitulo","imagen","url","fecha"],
+			//"FO"=>true
+			//"ID_F"=>'blog'
 		]);
-		$out = is_array($out['ot'])?$out['ot']['blog']:["error"=>"no encontrado"];
-		$jmyWeb ->pre(['p'=>$out,'t'=>'TITULO_ARRAY']);
-		$jmyWeb ->cargar_vista(["url"=>"blog.php","data"=>["blog_templet"=>$out]]);
+		
+		//$out = is_array($out['ot'])?$out['ot']['blog']:["error"=>"no encontrado"];
+		//$jmyWeb ->pre(['p'=>$out,'t'=>'TITULO_ARRAY']);
+		$jmyWeb ->cargar_vista(["url"=>"blog.php","data"=>["resultados"=>$out]]);
 	}
 }
 //$jmyWeb ->cargar_vista(["url"=>"productos.php"]);

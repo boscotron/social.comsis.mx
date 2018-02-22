@@ -1,7 +1,0 @@
-<?php
-
-$out = ["print"=>["elementos"=>
-,
-								]
-					]
-		];

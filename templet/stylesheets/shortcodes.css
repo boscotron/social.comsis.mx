@@ -954,7 +954,7 @@ ul.portfolio-filter.style1 > li a:hover {
 }
 
 .images-box .box-content .box-redmore {
-    margin: 38px 0 0;
+    margin: 5px auto 0 auto;
     padding-left: 28px;
     padding-right: 27px;
     border-radius: 3px;
