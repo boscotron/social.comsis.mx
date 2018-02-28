@@ -1,6 +1,6 @@
 <?php
 /* RUTAS DE ACCESO */
-define(	"RUTA_ACTUAL","http://local.social.comsis.mx/");  // URL actual del sistema
+define(	"RUTA_ACTUAL","http://test.social.comsis.mx/");  // URL actual del sistema
 define(	"BASE_TEMPLET","templet/"); 			// Ruta donde se aloje el tema o templet
 define(	"BASE_APP","app/"); 					// Ruta de la aplicacion
 define(	"BASE_ARCHIVO","att/"); 				// Ruta a guardar los archivos 
@@ -36,7 +36,7 @@ define(	"DB_JMY_ADD_TABLA",true); //Agregar Tablas faltantes en la base de datos
 define(	"DB_HO","localhost"); //servidor
 define(	"DB_US","root"); //usuario
 define(	"DB_PA","01568466700"); //contrase�a
-define(	"DB_DB","socialComsis"); //Base de datos
+define(	"DB_DB","testweb"); //Base de datos
 
 
 define(	"DB_PX",""); //prefijo de tablas en Base de datos //ACT
