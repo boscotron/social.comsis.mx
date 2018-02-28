@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!--[if IE 8 ]><html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US"><!--<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es-MX" lang="es-MX"><!--<![endif]-->
 <head>
     <!-- Basic Page Needs -->
     <meta charset="utf-8">
@@ -8,8 +8,11 @@
     <title>Social Comsis - Activamos tu marca en redes</title>
 
     <meta name="author" content="comsis.mx">
+    <meta name="description" content="Somos un equipo al que le gusta ver sus ideas en funcionamiento. Creemos que el diseño publicitario no se limita a grandes empresas. Trabajamos para conceptualizar tu negocio, empapándonos de tus ideas combinado con nuestro conocimiento y creatividad.">
+    <meta name="keywords" content="Redes, Gestión de redes Sociales, App, Desarrollo de aplicaciones móviles, web, web desing, diseño y desarrollo web, imagen empresarial, personaliza tu marca, Audiovisual, Videos animados, producción de video, postproduccion, fotografía corporativa, E-Commerce, ecommerce, comercio electronico, tienda virtual">
 
     <!-- Mobile Specific Metas -->
+
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     <!-- Bootstrap  -->
@@ -110,8 +113,11 @@
                                     <nav id="mainnav" class="mainnav">
                                         <ul class="menu"> 
                                             <li class="home"><a href="<?php $this->url_inicio(); ?>">Inicio</a></li>
-                                            <li><a href="<?php $this->url_inicio(); ?>/nosotros">Social Comsis</a></li>
-                                            <li><a href="<?php $this->url_inicio(); ?>/servicios">Servicios</a>
+                                            <li><a href="<?php $this->url_inicio(); ?>nosotros">Social Comsis</a>
+                                            <ul class="submenu">     
+                                                <li><a href="<?php $this->url_inicio(); ?>blog">Blog</a></li>
+                                            </ul></li>
+                                            <li><a href="<?php $this->url_inicio(); ?>servicios">Servicios</a>
                                                 <ul class="submenu">                           
                                                     <li><a href="<?php $this->url_inicio(); ?>servicios/comsis-redes">Comsis Redes</a></li>
                                                     <li><a href="<?php $this->url_inicio(); ?>servicios/comsis-app">Comsis APP</a></li>

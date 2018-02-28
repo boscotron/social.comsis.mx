@@ -3,7 +3,7 @@
     <div class="tp-banner" >
         <ul>
             <li data-transition="fade" data-slotamount="7" data-masterspeed="1000" data-saveperformance="on">
-                <img src="templet/images/slides/1.jpg" alt="slider-image" />
+                <img src="http://social.comsis.mx/att/carpeta/slider1.jpg" alt="slider-image" />
                 <div class="tp-caption sfl title-slide center" data-x="319" data-y="300" data-speed="1000" data-start="1000" data-easing="Power3.easeInOut">
                     Creative Ideas
                 </div>  
@@ -16,7 +16,7 @@
             </li>
 
             <li data-transition="fade" data-slotamount="7" data-masterspeed="1000" data-saveperformance="on">
-                <img src="templet/images/slides/2.jpg" alt="slider-image" />
+                <img src="http://social.comsis.mx/att/carpeta/slider2.jpg" alt="slider-image" />
                 <div class="tp-caption sfr title-slide center" data-x="0" data-y="250" data-speed="1000" data-start="1000" data-easing="Power3.easeInOut">
                     Your Business
                 </div>  
@@ -32,7 +32,7 @@
             </li>
 
             <li data-transition="fade" data-slotamount="7" data-masterspeed="1000" data-saveperformance="on">
-                <img src="templet/images/slides/3.jpg" alt="slider-image" />
+                <img src="http://social.comsis.mx/att/carpeta/slider2.jpg" alt="slider-image" />
                 <div class="tp-caption sfl title-slide center" data-x="605" data-y="255" data-speed="1000" data-start="1000" data-easing="Power3.easeInOut">
                     Story Theme
                 </div>  
@@ -53,6 +53,59 @@
     </div>
 </div>
 
+<section class="flat-row no-pad  clearfix background1">
+    <div class=" padl60">
+        <div class="flat-spacer height60"></div>
+        <div class="row">
+            <?php 
+            $servicios = [
+                            [   "titulo"=>"Redes",
+                                "icon"=>"fa fa-users",
+                                "desc"=>"Manejo de tus redes sociales",
+                                "url"=>RUTA_ACTUAL."servicios/comsis-redes",
+                            ],
+                            [   "titulo"=>"APP",
+                                "icon"=>"fa fa-mobile",
+                                "desc"=>"Desarrollo de aplicaciones web",
+                                "url"=>RUTA_ACTUAL."servicios/comsis-app",
+                            ],
+                            [   "titulo"=>"Web",
+                                "icon"=>"fa fa-link",
+                                "desc"=>"Diseño web",
+                                "url"=>RUTA_ACTUAL."servicios/comsis-web",
+                            ],
+                            [   "titulo"=>"Diseño",
+                                "icon"=>"fa fa-paint-brush",
+                                "desc"=>"Diseño empresarial e imagen coorporativa",
+                                "url"=>RUTA_ACTUAL."servicios/comsis-diseno",
+                            ],
+                            [   "titulo"=>"Audiovisual",
+                                "icon"=>"fa fa-play-circle",
+                                "desc"=>"Videos coorporativos",
+                                "url"=>RUTA_ACTUAL."servicios/comsis-audiovisual",
+                            ],
+                            [   "titulo"=>"E-Commerce",
+                                "icon"=>"fa fa-shopping-cart",
+                                "desc"=>"Tiendas en línea",
+                                "url"=>RUTA_ACTUAL."servicios/comsis-ecommerce",
+                            ],
+                        ];
+            for($i=0;$i<count($servicios);$i++){ 
+                echo '
+            <div class="col-md-2 col-sm-4 col-xs-4">
+                <div class="iconbox color-white left">                    
+                    <div class="box-header">
+                        <i class="'.$servicios[$i]['icon'].' fa-x5" aria-hidden="true"></i>                  
+                        <div class="box-title " ><a href="'.$servicios[$i]['url'].'">'.$servicios[$i]['titulo'].'</a></div>
+                    </div>
+                    <div class="box-content jmy_web_div" id="nosotros_d_'.$i.'" data-page="inicio" data-editor="no" >'.$this->pnt('nosotros_d_'.$i, $servicios[$i]['desc'],['return'=>1]).'</div>
+                </div><!-- /.iconbox -->
+            </div><!-- /.col-md-4 -->
+            '; } ?>
+        </div>
+        <div class="flat-spacer height60"></div>
+    </div>                  
+</section>   
 <!-- About -->
 <section class="flat-row about background-color border-bottom info-inicio">
     <div class="container">                    
@@ -69,7 +122,7 @@
             <div class="col-md-3">
                 <div class="iconbox style4 circle">                    
                     <div class="box-header">
-                        <i class="fa fa-bell-slash-o" aria-hidden="false"></i>
+                        <i class="fa fa-bullseye" aria-hidden="false"></i>
                         <div class="box-title jmy_web_div" id="tip_titulo_1" data-page="inicio" data-editable="no"  ><a href="#">
                             <?php  $this->pnt('tip_titulo_1','Titulo Tip');?>
                             </a></div>
@@ -83,7 +136,7 @@
             <div class="col-md-3">
                 <div class="iconbox style4 circle">                    
                     <div class="box-header">
-                        <i class="fa fa-bell-slash-o" aria-hidden="true"></i>
+                        <i class="fa fa-mobile" aria-hidden="true"></i>
                         <div class="box-title jmy_web_div" id="tip_titulo_2" data-page="inicio" data-editable="no"  ><a href="#">
                             <?php $this->pnt('tip_titulo_2','Titulo Tip'); ?></a></div>
                     </div>
@@ -95,7 +148,7 @@
             <div class="col-md-3">
                 <div class="iconbox style4 circle">                    
                     <div class="box-header">
-                        <i class="fa fa-bell-slash-o" aria-hidden="true"></i>
+                        <i class="fa fa-share-alt" aria-hidden="true"></i>
                         <div class="box-title jmy_web_div" id="tip_titulo_3" data-page="inicio" data-editable="no"  ><a href="#">
                             <?php $this->pnt('tip_titulo_3','Titulo Tip'); ?></a></div>
                     </div>
@@ -108,7 +161,7 @@
             <div class="col-md-3">
                 <div class="iconbox style4 circle">                    
                     <div class="box-header">
-                        <i class="fa fa-bell-slash-o" aria-hidden="true"></i>
+                        <i class="fa fa-users" aria-hidden="true"></i>
                         <div class="box-title jmy_web_div" id="tip_titulo_4" data-page="inicio" data-editable="no" ><a href="#">                            
                             <?php $this->pnt('tip_titulo_4','Titulo Tip'); ?>
                             </a></div>
@@ -178,6 +231,33 @@
                         <a href="<?php $this->url_inicio(); ?>paquetes/paquete-empresa" class="box-redmore">Leer más</a>
                     </div>                                
                 </div><!-- /.images-box -->
+                <div class="images-box  clear-fix show">  <div class="jmy_web_div" id="paquete_img_4" data-page="inicio"> <?php $this->pnt('paquete_img_4','<img src="'.RUTA_ACTUAL.BASE_TEMPLET.'/images/paquetes/2.jpg" alt="serives"> '); ?> </div>
+                    <div class="box-content descripcionServicios">
+                        <div class="box-title">
+                            <a href="#" class="jmy_web_div" id="paquete_titulo_4" data-page="inicio"  data-editor="no" >
+                            <?php $this->pnt('paquete_titulo_4','Título paquetes'); ?>
+                            </a>
+                        </div>  
+                        <div class="jmy_web_div" id="paquete_descripcion_4" data-page="inicio"  >
+                            <?php $this->pnt('paquete_descripcion_4','Descripción corta del paquete'); ?>
+                         </div>
+                         <a href="<?php $this->url_inicio(); ?>paquetes/paquete-local" class="box-redmore">Leer más</a>
+                    </div>                                
+                </div><!-- /.images-box -->    
+
+                <div class="images-box  clear-fix"><div class="jmy_web_div" id="paquete_img_5" data-page="inicio"> <?php $this->pnt('paquete_img_5','<img src="'.RUTA_ACTUAL.BASE_TEMPLET.'/images/paquetes/3.jpg" alt="serives"> '); ?> </div>
+                    <div class="box-content descripcionServicios">
+                        <div class="box-title">
+                            <a href="#" class="jmy_web_div" id="paquete_titulo_5" data-page="inicio"  data-editor="no" >
+                                <?php $this->pnt('paquete_titulo_5','Título paquetes'); ?>
+                            </a>
+                        </div>  
+                        <div class="jmy_web_div" id="paquete_descripcion_5" data-page="inicio"  >
+                            <?php $this->pnt('paquete_descripcion_5','Descripción corta del paquete'); ?>
+                         </div><a href="<?php $this->url_inicio(); ?>paquetes/paquete-sucursal" class="box-redmore">Leer más</a>
+                    </div>                                
+                </div><!-- /.images-box -->    
+
             </div><!-- /.col-md-12 -->
         </div>       
     </div><!-- /.container -->   
@@ -197,144 +277,43 @@
             <div class="col-md-12"><div id="jmy_web_agregar_blog"></div>
                 <div class="blog-shortcode blog-carosuel-wrap">
                     <div class="blog-carosuel">
-                        <article class="post clearfix">
-                            <div class="featured-post">
-                                <ul class="post-meta">
-                                    <li class="month">
-                                        Aug, 2
-                                    </li>
-                                    <li class="date">
-                                        <span class="year"> 2016 </span>        
-                                    </li>
-                                </ul><!-- /.post-meta -->
-                            </div><!-- /.feature-post -->
-                            <div class="content-post">
-                                <h2 class="title-post"><a href="blog-single.html">Sed pellentesque</a></h2> 
-                                <div class="entry-post excerpt">
-                                    <p>Dolor sit consectetuer adipiscing sed diam nonummy nibh euismod tincidunt laoreet dolore
-                                    </p>
-                                </div>                         
-                                <ul class="meta-post clearfix">
-                                    <li class="avatar"> 
-                                        <a href="#"><img src="templet/images/blog/comment4.jpg" alt="blog"></a>
-                                    </li>
-                                    <li class="author">
-                                        <a href="#">Jennifer Freeman</a>
-                                    </li>                                        
-                                </ul><!-- /.meta-post -->
-                            </div><!-- /.content-post -->
-                        </article>
+                        
+                        <?php
+                        $blog = $data['blog'];
+                       // $this ->pre(['p'=>$blog,'t'=>'TITULO_ARAY']);
+                    for($i=0;$i<count($blog['otKey']);$i++){
+                        $tmp=$blog['ot'][$blog['otKey'][$i]];
+                        if($tmp['url']!='' && $tmp['titulo']!='' ){
+                            $t =explode('src="', $tmp['imagen']);
+                            $t =explode('"', $t[1]);
+                            $tmp['imagen']=$t[0];
+                            $img=($tmp['imagen']!='')?$tmp['imagen']:RUTA_ACTUAL.BASE_TEMPLET.'images/blog/1.jpg';
+                            
+                            echo ' <article class="post clearfix">
+                                    <div class="featured-post">
+                                        <ul class="post-meta">
+                                            <li class="month">
+                                               '.$tmp['fecha'].'
+                                            </li>
+                                        </ul><!-- /.post-meta -->
+                                    </div><!-- /.feature-post -->
+                                    <div class="content-post">
+                                        <h2 class="title-post"><a href="'.RUTA_ACTUAL.'blog/'.$tmp['url'].'">'.$tmp['titulo'].'</a></h2> 
+                                        <div class="entry-post excerpt">
+                                            <p>'.$tmp['subtitulo'].'
+                                            </p>
+                                        </div>                         
+                                        <ul class="meta-post clearfix">
+                                            <li class="avatar"> 
+                                                <a href="'.RUTA_ACTUAL.'blog/'.$tmp['url'].'"><img src="'.$img.'" alt="blog" ></a>
+                                            </li>
+                                        </ul><!-- /.meta-post -->
+                                    </div><!-- /.content-post -->
+                                </article>';
 
-                        <article class="post clearfix">
-                            <div class="featured-post">
-                                <ul class="post-meta">
-                                    <li class="month">
-                                        March, 6
-                                    </li>
-                                    <li class="date">
-                                        <span class="year"> 2016 </span>        
-                                    </li>
-                                </ul><!-- /.post-meta -->
-                            </div><!-- /.feature-post -->
-                            <div class="content-post">
-                                <h2 class="title-post"><a href="blog-single.html">Graphic design work</a></h2> 
-                                <div class="entry-post excerpt">
-                                    <p>Dolor sit consectetuer adipiscing sed diam nonummy nibh euismod tincidunt laoreet dolore
-                                    </p>
-                                </div>                         
-                                <ul class="meta-post clearfix">
-                                    <li class="avatar"> 
-                                        <a href="#"><img src="templet/images/blog/comment3.jpg" alt="blog"></a>
-                                    </li>
-                                    <li class="author">
-                                        <a href="#">John Doe</a>
-                                    </li>                                        
-                                </ul><!-- /.meta-post -->
-                            </div><!-- /.content-post -->
-                        </article>
 
-                        <article class="post clearfix">
-                            <div class="featured-post">
-                                <ul class="post-meta">
-                                    <li class="month">
-                                        June, 8
-                                    </li>
-                                    <li class="date">
-                                        <span class="year"> 2016 </span>        
-                                    </li>
-                                </ul><!-- /.post-meta -->
-                            </div><!-- /.feature-post -->
-                            <div class="content-post">
-                                <h2 class="title-post"><a href="blog-single.html">Client branding project</a></h2> 
-                                <div class="entry-post excerpt">
-                                    <p>Dolor sit consectetuer adipiscing sed diam nonummy nibh euismod tincidunt laoreet dolore
-                                    </p>
-                                </div>                         
-                                <ul class="meta-post clearfix">
-                                    <li class="avatar"> 
-                                        <a href="#"><img src="templet/images/blog/comment4.jpg" alt="blog"></a>
-                                    </li>
-                                    <li class="author">
-                                        <a href="#">Willie Clark</a>
-                                    </li>                                        
-                                </ul><!-- /.meta-post -->
-                            </div><!-- /.content-post -->
-                        </article>
-
-                        <article class="post clearfix">
-                            <div class="featured-post">
-                                <ul class="post-meta">
-                                    <li class="month">
-                                        July, 5
-                                    </li>
-                                    <li class="date">
-                                        <span class="year"> 2016 </span>        
-                                    </li>
-                                </ul><!-- /.post-meta -->
-                            </div><!-- /.feature-post -->
-                            <div class="content-post">
-                                <h2 class="title-post"><a href="blog-single.html">Thank you from us</a></h2> 
-                                <div class="entry-post excerpt">
-                                    <p>Dolor sit consectetuer adipiscing sed diam nonummy nibh euismod tincidunt laoreet dolore
-                                    </p>
-                                </div>                         
-                                <ul class="meta-post clearfix">
-                                    <li class="avatar"> 
-                                        <a href="#"><img src="templet/images/blog/comment3.jpg" alt="blog"></a>
-                                    </li>
-                                    <li class="author">
-                                        <a href="#">Alex Phan'</a>
-                                    </li>                                        
-                                </ul><!-- /.meta-post -->
-                            </div><!-- /.content-post -->
-                        </article>
-                        <article class="post clearfix">
-                            <div class="featured-post">
-                                <ul class="post-meta">
-                                    <li class="month">
-                                        June, 8
-                                    </li>
-                                    <li class="date">
-                                        <span class="year"> 2016 </span>        
-                                    </li>
-                                </ul><!-- /.post-meta -->
-                            </div><!-- /.feature-post -->
-                            <div class="content-post">
-                                <h2 class="title-post"><a href="blog-single.html">Client branding project</a></h2> 
-                                <div class="entry-post excerpt">
-                                    <p>Dolor sit consectetuer adipiscing sed diam nonummy nibh euismod tincidunt laoreet dolore
-                                    </p>
-                                </div>                         
-                                <ul class="meta-post clearfix">
-                                    <li class="avatar"> 
-                                        <a href="#"><img src="templet/images/blog/comment4.jpg" alt="blog"></a>
-                                    </li>
-                                    <li class="author">
-                                        <a href="#">Willie Clark</a>
-                                    </li>                                        
-                                </ul><!-- /.meta-post -->
-                            </div><!-- /.content-post -->
-                        </article>
+                        }
+                    }?>
 
                     </div>
                 </div>

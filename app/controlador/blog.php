@@ -37,24 +37,22 @@ if($gt['peticion']=='instalar'){ $jmyWeb->pre(["p"=>$jmy->db([$tabla])]); }else{
 			]);
 
 		if(in_array('pre',$pet)){ $jmyWeb ->pre(["p"=>$o]); }
-
 		
 		/* Rutina para guardar nuevo registro o existente */
 		if($gu && in_array('guardar',$pet)){ //verifica que se encuentre en las reglas de guardar
-			$g =[
-					'url'=>$url
-				];
+			$g =[ 'url'=>$url ];
+
 			$g =$jmy->guardar([	
-				"TABLA"=>$tabla, // STRING
-				"ID_F"=>($o['otKey'][0]!='')?$o['otKey'][0]:uniqid(), // Array
+				"TABLA"=>$tabla, 
+				"ID_F"=>($o['otKey'][0]!='')?$o['otKey'][0]:uniqid(), // Genera ID si es nuevo registro
 				"A_D"=>TRUE, 
 				"GUARDAR"=>$g,
 			]);
+
 			$o = $jmy->ver([	
 				"TABLA"=>$tabla, 		
 				"V"=>$url, 
 				"COL"=>["url"],
-				//"SALIDA"=>"ID_F"
 			]);
 		}
 
@@ -74,28 +72,34 @@ if($gt['peticion']=='instalar'){ $jmyWeb->pre(["p"=>$jmy->db([$tabla])]); }else{
 
 		}elseif(count($o['otKey'])>0){
 
-			$out = $jmy->ver([	
-				"TABLA"=>$tabla, 		
-				"ID_F"=>$o['otKey'][0]
-			]);
-			
-			
-			$out = is_array($out['ot'])?$out['ot']:["error"=>"no encontrado"];
-			
 			$out['id']=$o['otKey'][0];
-			
-			$out['id_page']=$o['otKey'][0];
-
-			$t = $jmyWeb -> cargar([ "pagina"=>$out['id_page'],
+			//carga de datos del post en el blog
+			$t = $jmyWeb -> cargar([ "pagina"=>$out['id'],
 									 "tabla"=>$tabla 
 									]);
+			//carga de datos del tema de blog
+			$tema = $jmyWeb -> cargar([ "pagina"=>'blog',
+									 	"tabla"=>"vistaweb", 
+									 	"secundario"=>"tema_blog", 
+									]);
+			//Últimos Post
+			$ultimos = $jmy->ver([	
+				"TABLA"=>"blog", 		
+				"COLUMNAS"=>["titulo","imagen","url","fecha"],
+				//"FO"=>true
+				//"ID_F"=>'blog'
+			]);
 
 			if(in_array('pre',$pet)){				
+				$jmyWeb ->pre(['p'=>$ultimos,'t'=>'ULTIMOS']);
+				$jmyWeb ->pre(['p'=>$tema,'t'=>'TEMA']);
 				$jmyWeb ->pre(['p'=>$out,'t'=>'TITULO_ARAY']);
 				$jmyWeb ->pre(['p'=>$t,'t'=>'TTT']);
 				$jmyWeb ->pre(["p"=>$out,"t"=>"Variables disponibles en $data"]);
 			}else{
-				$jmyWeb -> cargar_vista(["url"=>"blog-single.php","data"=>$out]);
+				$jmyWeb -> cargar_vista(["url"=>"blog-single.php",
+										 "data"=>["blog"=>$out,"ultimos"=>$ultimos]
+										]);
 			}
 
 		}else{
@@ -108,12 +112,14 @@ if($gt['peticion']=='instalar'){ $jmyWeb->pre(["p"=>$jmy->db([$tabla])]); }else{
 		$out = $jmy->ver([	
 			"TABLA"=>"blog", 		
 			"COLUMNAS"=>["titulo","subtitulo","imagen","url","fecha"],
-			//"FO"=>true
+			"FO"=>true
 			//"ID_F"=>'blog'
 		]);
-		
+		$p =$jmyWeb -> cargar([ "pagina"=>"blog",
+								"tabla"=>'vistaweb'
+									]);
 		//$out = is_array($out['ot'])?$out['ot']['blog']:["error"=>"no encontrado"];
-		//$jmyWeb ->pre(['p'=>$out,'t'=>'TITULO_ARRAY']);
+		//$jmyWeb ->pre(['p'=>$p,'t'=>'TITULO_ARRAY']);
 		$jmyWeb ->cargar_vista(["url"=>"blog.php","data"=>["resultados"=>$out]]);
 	}
 }

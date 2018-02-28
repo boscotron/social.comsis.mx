@@ -11,14 +11,14 @@ $blog = $data['resultados'];
         <div class="row">
             <div class="col-md-12">                    
                 <div class="page-title-heading">
-                    <h1 class="title jmy_web_div" id="titulo_blog" data-page="blog" contenteditable="true"><?php echo ($blog_templet['titulo_blog']!='')? $blog_templet['titulo_blog']:'El <span>Blog.'; ?></span></h1>
+                    <h1 class="title jmy_web_div" id="titulo_blog" data-page="blog" data-editor="no">
+                        <?php $this->pnt('titulo_blog','Blog'); ?>
+                       </span></h1>
                 </div><!-- /.page-title-captions -->
-                <div class="breadcrumbs">
-                    <ul>
-                        <li><a href="index.html" class="jmy_web_div" id="bread_1" data-page="blog" contenteditable="true"><?php echo ($blog_templet['bread_1']!='')? $blog_templet['bread_1']:'Inicio'; ?></a></li>
-                        <li><a href="blog.html" class="jmy_web_div" id="bread_2" data-page="blog" contenteditable="true"><?php echo ($blog_templet['bread_2']!='')? $blog_templet['bread_2']:'Welcome to our blog'; ?></a></li>
-                        <li class="jmy_web_div" id="bread_3" data-page="blog" contenteditable="true"><?php echo ($blog_templet['bread_3']!='')? $blog_templet['bread_3']:'Blog Large Image'; ?></li>
-                    </ul>                   
+                <div class="breadcrumbs jmy_web_div" id="sub_titulo_blog" data-page="blog"  data-editor="no">
+                    <?php $this->pnt('sub_titulo_blog','<ul>
+                        <li><a>Sub titulo o desripción</a></li>
+                    </ul>                   '); ?>                    
                 </div><!-- /.breadcrumbs -->   
             </div><!-- /.col-md-12 -->  
         </div><!-- /.row -->  
@@ -73,60 +73,23 @@ $blog = $data['resultados'];
             <div class="sidebar-post">
                 <div class="sidebar">                 
 
-                    <div class="widget widget_text widget_info">
-                        <h5 class="widget-title jmy_web_div" id="titulo_desc_blog" data-page="blog" contenteditable="true"><?php echo ($blog_templet['titulo_desc_blog']!='')? $blog_templet['titulo_desc_blog']:'Descripción del blog'; ?></h5>
+                    <div class="widget widget_text widget_info lateral-blog">
+                        <h5 class="widget-title jmy_web_div" id="titulo_desc_blog" data-page="blog" data-editor="no"><?php $this->pnt('titulo_desc_blog','Descripcion del blog'); ?></h5>
                         <div class="textwidget">                                
-                            <p class="jmy_web_div" id="descripcion_blog" data-page="blog" contenteditable="true"><?php echo ($blog_templet['descripcion_blog']!='')? $blog_templet['descripcion_blog']:'Sed pellentesque nibh enim, quis euismod enim lacinia nec. Phasellus quam diam, semper in erat eu. Consectetur adipiscing elit. Sed pellentesque nibh enim, quis euismod enim lacinia nec.'; ?></p>
+                            <p class="jmy_web_div" id="descripcion_blog" data-page="blog" data-editor="no">
+                                <?php $this->pnt('descripcion_blog','Sed pellentesque nibh enim, quis euismod enim lacinia nec. Phasellus quam diam, semper in erat eu. Consectetur adipiscing elit. Sed pellentesque nibh enim, quis euismod enim lacinia nec.'); ?></p>
                             <div class="social-links">
 
-                                <a href="#" class="jmy_web_div" id="redes_sociales_twiter" data-page="blog" contenteditable="true"><?php echo ($blog_templet['redes_sociales_twiter']!='')? $blog_templet['redes_sociales_twiter']:'<i class="fa fa-twitter"></i>'; ?></a>
-
-                                <a href="#" class="jmy_web_div" id="redes_sociales_facebook" data-page="blog" contenteditable="true"><?php echo ($blog_templet['redes_sociales_facebook']!='')? $blog_templet['redes_sociales_facebook']:'<i class="fa fa-facebook"></i>'; ?></a>
-
-                                <a href="#" class="jmy_web_div" id="redes_sociales_pinterest" data-page="blog" contenteditable="true"><?php echo ($blog_templet['redes_sociales_pinterest']!='')? $blog_templet['redes_sociales_pinterest']:'<i class="fa fa-pinterest"></i>'; ?></a>
+                                <a href="https://twitter.com/SocialComsis"><i class="fa fa-twitter"></i></a>
+                                <a href="https://www.facebook.com/SocialComsis/?ref=http://social.comsis.mx/"><i class="fa fa-facebook"></i></a>
+                                <a href="https://www.instagram.com/socialcomsis/?hl=es-la"><i class="fa fa-pinterest"></i></a>
 
                                
                             </div>                              
                         </div><!-- /.textwidget -->
                     </div>                            
 
-                    <div class="widget widget-recent-news">
-                        <h5 class="widget-title jmy_web_div" id="titulo_blog" data-page="blog" contenteditable="true" >Latest Posts</h5>
-                        <ul class="popular-news clearfix">
-                            <li>
-                                <div class="thumb">
-                                   <img src="<?php echo RUTA_ACTUAL.BASE_TEMPLET; ?>images/blog/s1.jpg" alt="image">
-                                </div>
-                                <div class="text">                        
-                                    <h6>
-                                        <a href="#">Graphic design work</a>
-                                    </h6>    
-                                    <p>27th July 2016</p>               
-                                </div>
-                            </li>
-                            <li>
-                                <div class="thumb">
-                                   <img src="<?php echo RUTA_ACTUAL.BASE_TEMPLET; ?>images/blog/s3.jpg" alt="image">
-                                </div>
-                                <div class="text">
-                                    <h6><a href="#">Client branding project</a></h6>
-                                    <p>27th July 2016</p>
-                                    
-                                </div>
-                            </li>
-                            <li>
-                                <div class="thumb">
-                                   <img src="<?php echo RUTA_ACTUAL.BASE_TEMPLET; ?>images/blog/s2.jpg" alt="image">
-                                </div>
-                                <div class="text">
-                                    <h6><a href="#">Thank you from us</a></h6>
-                                    <p>27th July 2016</p>
-                                    
-                                </div>
-                            </li>
-                        </ul><!-- /.popular-news -->
-                    </div><!-- /.widget-popular-news -->
-
+                   <?php /*
                     <div class="widget widget_tag">
                         <h5 class="widget-title">Tags</h5>
                         <div class="tag-list">
@@ -138,6 +101,7 @@ $blog = $data['resultados'];
                             <a href="#">Branding</a>              
                         </div>
                     </div><!-- /.widget-tag -->
+                    */ ?>
                 </div><!-- /.sidebar -->
             </div><!-- /.sidebar-post -->            
         </div><!-- /.row -->           

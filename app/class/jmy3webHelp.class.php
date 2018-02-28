@@ -2,6 +2,7 @@
 //require_once();
 class JMY3WEB extends JMY3MySQL{
   public $print;
+  public $printSec;
   private $out;
   private $tabla;
   private $modoEdicion;
@@ -10,7 +11,7 @@ class JMY3WEB extends JMY3MySQL{
   	global $tabla;
   	$tabla = "vistaweb";
   	global $modoEdicion;
-  	$modoEdicion = MODO_DESAROLLADOR;
+  	$modoEdicion=($_SESSION['JMY3WEB'][DOY])?ture:MODO_DESAROLLADOR;
 	 //$_SESSION['JMY3WEB']['add_js']=[];
 
   	parent::db([$tabla]); // Verificamos que exista la tabla, de nos er así el sistema la crea
@@ -67,20 +68,41 @@ class JMY3WEB extends JMY3MySQL{
   	public function token_variable($d=''){ 
 		return  md5($_SESSION['session']['TOKEN'].$d.date('d'));						
 	}
-	public function cargar($d=[],$variable='print',$o=['error'=>'datos insuficientes']){ /* cargar(["pagina"=>"blog","id"=>"titulo_nota"]); // id opcional */
-		global  $print;global $tabla;
+	public function cargar($d=[],$variable='print',$o=['error'=>'datos insuficientes']){ 
+		/* cargar(["pagina"=>"blog","id"=>"titulo_nota"]); // id opcional */
+		global  $print;global  $printSec;global $tabla;
 		if($d['pagina']!=''){
-		$t=($d['tabla']!='')?$d['tabla']:$tabla;
-	  	$o = parent::ver(["TABLA"=>$t,"ID_F"=>$d['pagina'],'FO'=>true]);	  	
-	  	//$this->pre(['p'=>$o]);
-	  	$o['PETICION']=$d;
-	  	$print =$o['ot'][$d['pagina']];
-	  } return $o;
+			$t=($d['tabla']!='')?$d['tabla']:$tabla;
+		  	$o = parent::ver([ "TABLA"=>$t, "ID_F"=>$d['pagina'] ]);
+		  	$o['PETICION']=$d;
+		  	if($d['secundario']!=''){
+		  		if(!is_array($printSec)){$printSec=[];}
+		  		$printSec[$d['secundario']]=$o['ot'][$d['pagina']];
+		  	}else{
+		  		$print =$o['ot'][$d['pagina']];
+		  	}
+		} 
+		return $o;
+	}
+
+	public function pnt($d,$ph="Texto texto texto",$op=[]){ 
+	// pnt(id, place holder);  imprime la infomración cargada por la funcion cargar 
+	// pnt(id, place holder, ["secundario"=>"NOMBRE DE LA VARIABLE EXTRA"]); 
+		global $print; global $printSec; 
+		if($op['secundario']!=''){
+			$o=($printSec[$op['secundario']][$d]!='')?$printSec[$op['secundario']][$d]:$ph;
+		}else{
+			$o=($print[$d]!='')?$print[$d]:$ph;
+		}
+		if(!$op['return'])
+			echo $o;			
+		else
+			return $o;
 	}
 
 	public function guardar($d=[],$r="no data"){
 		global $tabla;
-		if($d['id']!=''&&$d['pagina']!=''&&$d['valor']!=''){
+		if($d['id']!=''&&$d['pagina']!=''&&$d['valor']!='' ){
 			//$d['opciones'] // guardar aparte
 			$ta=($d['tabla']!='')?$d['tabla']:$tabla;
 			$t=[$d['id']=>$d['valor']];
@@ -89,25 +111,21 @@ class JMY3WEB extends JMY3MySQL{
 			"A_D"=>TRUE, 
 			"GUARDAR"=>$t	];
 			$r=parent::guardar($t);
-	} return [$t,$r];
+		} 
+		return [$t,$r];
 	}
 
 	public function pre($d=[]){
 		$o=$d['p'];$t=($d['t']!="")?"<h5>".$d['t']."</h5>":"";
 		echo"$t<pre>";print_r($o);echo"</pre>";
 	}
-	public function pnt($d,$ph="Texto texto texto"){ // pnt(id, place holder);  imprime la infomracio'n cargada por la funcion cargar(["pagina"=>"blog","id"=>"titulo_nota"]); // id opcional 
-		global  $print;global $tabla;
-		global $print; 
-		echo ($print[$d]!='')?$print[$d]:$ph;
-	}
 	public function cargar_vista($d=[]){	
 		global $print;
 		global $modoEdicion;
 		$data = $d["data"];
 		if($modoEdicion){			
-			$this->cargar_js(['url'=>BASE_APP.'js/ckeditorN/adapters/jquery.js']); // funciones jmy 
 			$this->cargar_js(['url'=>BASE_APP.'js/ckeditorN/ckeditor.js']); // funciones jmy 
+			$this->cargar_js(['url'=>BASE_APP.'js/ckeditorN/adapters/jquery.js']); // funciones jmy 
 			$this->cargar_js(['url'=>BASE_APP.'js/jmy/jmyWeb.js']); // funciones jmy 
 		}
 		if(file_exists(BASE_TEMPLET.TEMPLET_HEADER)){

@@ -1,5 +1,5 @@
 <?php
-if(MODO_DESAROLLADOR) {
+if(MODO_DESAROLLADOR || $_SESSION['JMY3WEB'][DOY]) {
  echo $jmyWeb->archivos([	'ruta'=>'carpeta/',
 					'height'=>'500',
 					'width'=>'100%',

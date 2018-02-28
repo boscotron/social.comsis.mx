@@ -780,7 +780,7 @@ ul.portfolio-filter.style1 > li a:hover {
 /* Iconbox
 -------------------------------------------------------------- */
 .iconbox .box-header i {
-    font-size: 27px;   
+    font-size: 55px;   
     color:  #0F6F8E;
 }
 
@@ -973,10 +973,10 @@ ul.portfolio-filter.style1 > li a:hover {
 }
 
 .blog-shortcode article ul.meta-post li.avatar {
-    width: 20px;
-    height: 20px;
+    width: 200px;
+    //height: 20px;
     border-radius: 50px;
-    padding-left: 0;
+    //padding-left: 0;
 }
 
 .blog-shortcode article .content-post {
