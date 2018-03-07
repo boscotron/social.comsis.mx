@@ -1,5 +1,7 @@
+<?php
+$linkWhathsApp ="https://api.whatsapp.com/send?phone=5215513709088&text=Hola,%20estoy%20interesado%20en%20cotizar%20un%20proyecto";
+?>
 <!DOCTYPE html>
-<<<<<<< HEAD
 <!--[if IE 8 ]><html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US"> <![endif]-->
 <!--[if (gte IE 9)|!(IE)]><!--><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es-MX" lang="es-MX"><!--<![endif]-->
 <head>
@@ -14,66 +16,73 @@
 
     <!-- Mobile Specific Metas -->
 
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap  -->
     <link rel="stylesheet" type="text/css" href="<?php $this->url_templet(); ?>stylesheets/bootstrap.css" >
 
     <!-- Theme Style -->
     <link rel="stylesheet" type="text/css" href="<?php $this->url_templet(); ?>stylesheets/style.css">
-=======
-<html lang="en">
->>>>>>> 0c2f0ea01a8ef5aea9ce15c1897b86696583c2d1
 
-<head>
-    <meta charset="utf-8">  
-    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1" />    
-    <title>Fourteen - Responsive Landing Page Template</title>
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="<?php $this->url_templet(); ?>lib/images/favicon.png">
-    <meta name="description" content="">
-    <meta name="author" content="">
-        
-    <!-- 1140px Grid styles for IE -->
-    <!--[if lte IE 9]><link rel="stylesheet" href="lib/css/ie.css" type="text/css" media="screen" /><![endif]-->
+    <!-- Responsive -->
+    <link rel="stylesheet" type="text/css" href="<?php $this->url_templet(); ?>stylesheets/responsive.css">
 
-    <!-- CSS concatenated and minified via ant build script-->
-    <link rel="stylesheet" href="<?php $this->url_templet(); ?>lib/css/style.css">
-    <link rel="stylesheet" href="<?php $this->url_templet(); ?>lib/css/animate.css">
-    <link rel="stylesheet" href="<?php $this->url_templet(); ?>lib/css/font-awesome.css">
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,400,600,300,700' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Oswald:400,700,300' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
-    <!-- end CSS-->
+    <!-- Colors -->
+    <link rel="stylesheet" type="text/css" href="<?php $this->url_templet(); ?>stylesheets/colors/color1.css" id="colors">
     
-    <script src="<?php $this->url_templet(); ?>lib/js/jquery-1.10.2.min.js"></script>
-    <script src="<?php $this->url_templet(); ?>lib/js/jquery-migrate-1.2.1.js"></script>
-    
-</head>
+    <!-- Animation Style -->
+    <link rel="stylesheet" type="text/css" href="<?php $this->url_templet(); ?>stylesheets/animate.css">
+    <link rel="stylesheet" type="text/css" href="<?php $this->url_templet(); ?>stylesheets/jmyweb.css">
 
-<body>
+    <!-- Favicon and touch icons  -->
+    <link href="<?php $this->url_templet(); ?>icon/apple-touch-icon-48-precomposed.png" rel="apple-touch-icon-precomposed" sizes="48x48">
+    <link href="icon/apple-touch-icon-32-precomposed.png" rel="apple-touch-icon-precomposed">
+    <link href="<?php $this->url_templet(); ?>icon/favicon.png" rel="shortcut icon">
 
+    <!--[if lt IE 9]>
+        <script src="javascript/html5shiv.js"></script>
+        <script src="javascript/respond.min.js"></script>
+    <![endif]-->
+</head>                                 
+<body class="header_sticky home4 has-top"> 
+    <!-- Preloader -->
     <div id="jmy_web"></div>
     <div id="jmy_web_tools"></div>
+    <div id="botonWhastAPP">
+        <div class="col-md-3 text-right">
+            <div class="textwidget"><p class="get-appointment">
+                <a href="<?php echo $linkWhathsApp; ?>" id="btn_whatsapp" class="sombraObscura"><i class="fa fa-whatsapp rebote"  style="font-size: 40px"> </i> Envíanos un mensaje</a> 
+            </p></div>
+        </div>        
+    </div>
+    <section class="loading-overlay">
+        <div class="Loading-Page">
+            <h2 class="loader">Cargando...</h2>
+        </div>
+    </section>   
+   
+        <div class="site-wrapper ">
+            <div class="top">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8 col-offset-md-1">  
+                                         
+                            <ul class="flat-information">
+                                
+                                <li class="address"><a href="+84905010025" class="jmy_web_div" id="header_direccion"  data-editor="no" data-page="header"><?php $this->pnt('header_direccion','<i class="fa fa-map-marker" aria-hidden="true"></i> Mérida Yucatán, México.',["secundario"=>"header"]); ?></a></li>
 
-<<<<<<< HEAD
-                                <li class="email jmy_web_div"  id="header_horario" data-page="header" data-editor="no" contenteditable="true"><?php 
-                                echo ($header_P['header_horario']!='')?$header_P['header_horario']:
-                                    '<i class="fa fa-clock-o jmy_web_ico" aria-hidden="true"></i> Lun a Vie: 10 am - 5 pm';   ?></li>
+                                <li class="email jmy_web_div"  id="header_horario" data-page="header" data-editor="no"></li>
                                     
 
-                                <li class="phone jmy_web_div" id="header_telefono" data-page="header" data-editor="no" contenteditable="true"><?php 
-                                echo ($header_P['header_telefono']!='')?$header_P['header_telefono']:
-                                    '<i class="fa fa-phone"></i> 55 8888 8888';
-                                ?></li>
+                                <li class="phone jmy_web_div" id="header_telefono" data-page="header" data-editor="no"></li>
 
 
 
                             </ul>                    
                         </div><!-- /.col-md-10 -->       
-                        <div class="col-md-3 text-right">
+                        <div class="col-md-3 text-right hidden-xs hidden-sm hidden-md">
                             <div class="textwidget"><p class="get-appointment">
-                                <a href="https://api.whatsapp.com/send?phone=5215513709088&text=Hola,%20estoy%20interesado%20en%20cotizar%20un%20proyecto" id="btn_whatsapp" class="sombraObscura"><i class="fa fa-whatsapp"  style="font-size: 40px"> </i> Envíanos un mensaje</a> 
+                                <a href="<?php echo $linkWhathsApp; ?>" id="btn_whatsapp" class="sombraObscura"><i class="fa fa-whatsapp"  style="font-size: 40px"> </i> Envíanos un mensaje</a> 
                             </p></div>
                         </div>        
                     </div><!-- /.row -->
@@ -91,7 +100,7 @@
                                         <img src="<?php $this->url_templet(); ?>images/logo.png" alt="image">
                                     </a>
                                 </div><!-- /.logo -->
-                                <div class="btn-menu">
+                                <div class="btn-menu ">
                                     <span></span>
                                 </div><!-- //mobile menu button -->
 
@@ -113,7 +122,7 @@
                                                     <li><a href="<?php $this->url_inicio(); ?>servicios/comsis-ecommerce">Comsis E-Commerce</a></li>
                                                 </ul>
                                             </li>
-                                            <li><a href="<?php $this->url_inicio(); ?>paquetes">paquetes</a>
+                                            <li><a href="<?php $this->url_inicio(); ?>paquetes">Paquetes</a>
                                                 <ul class="submenu">                           
                                                     <li><a href="<?php $this->url_inicio(); ?>paquetes/paquete-local">Paquete Local</a></li>
                                                     <li><a href="<?php $this->url_inicio(); ?>paquetes/paquete-sucursal">Paquete Sucursal</a></li>
@@ -125,7 +134,7 @@
                                     </nav><!-- /.mainnav -->      
                                 </div><!-- /.nav-wrap -->
 
-                                <ul class="menu menu-extra">     
+                                <ul class="menu menu-extra  hidden-xs hidden-sm">     
                                     <li class="off-canvas">
                                         <a href="#"><i class="fa fa-bars"></i></a>
                                     </li>
@@ -134,87 +143,5 @@
                             </div><!-- /.col-md-12 -->              
                         </div><!-- /.header-inner -->                 
                     </div><!-- /.row -->
-=======
-    <!--begin container -->
-    <div id="container">
-        
-        <!--begin intro -->
-        <div id="intro">
-        
-            <!--begin header_wrapper -->
-            <header id="header_wrapper">
-                
-                <!--begin header -->    
-                <div id="header" class="clearfix">
-
-                    
-                    <!--begin row -->
-                    <div class="row">
-                        
-                        <!--begin twelvecol -->
-                        <div class="twelvecol jmy_web_div" data-page="inicio" id="varialbe_titulo" data-editor="no">
-                            
-<?php $this->pnt('varialbe_titulo','
-
-                            <!--begin logo -->            
-                            <a href="index.html" id="logo">Fourteen</a>
-                            <!--end logo -->
-                            
-                            <!--begin purchase button -->
-                            <a href="#" class="purchase">Purchase Now</a>
-                            <!--end purchase button -->
-                             
-                            <!--begin nav -->
-                            <ul id="nav">
-                                <li>
-                                    <a href="#container">Home</a>
-                                </li>
-                                <li>
-                                    <a href="#showcase">Showcase</a>
-                                </li>
-                                <li>
-                                    <a href="#services">Services</a>
-                                </li>
-                                <li>
-                                    <a href="#features">Features</a>
-                                </li>
-                                <li>
-                                    <a href="#pricing">Pricing</a>
-                                </li>
-                                <li class="last">
-                                    <a href="#subscribe">Subscribe</a>
-                                </li>
-                            </ul>
-                            <!--end nav -->
-                                                    '); ?>
-                        </div>
-                        <!--end twelvecol -->
-                    
-                    </div>
-                    <!--end row -->
-                        
                 </div>
-                <!--end header -->
-                
-            </header>
-            <!--end header_wrapper -->
-              <!--begin home section -->
-            <section id="home">
-            
-                <div class="home_box bounce_fade">
-                    
-                    <span class="slider_text1">Create & share beautiful landing pages with our amazing custom template.</span>
-                                            
-                    <span class="slider_text2">We want to make your word beautiful. You can use our love & passion!</span>
-                    
-                    <a href="#" class="slider_text3"><i class="fa fa-apple"></i>&nbsp; Download app</a>
-                
-                    <a href="#" class="slider_text4">Discover more</a>
-                    
->>>>>>> 0c2f0ea01a8ef5aea9ce15c1897b86696583c2d1
-                </div>
-                                        
-            </section>
-            <!--end home section -->
-            
-        </div>
+            </header><!-- /.header -->

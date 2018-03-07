@@ -170,7 +170,10 @@
 } 
 
 
-#botonWhastAPP #btn_whatsapp{text-align: center;}
+#botonWhastAPP #btn_whatsapp{
+	text-align: center;
+	border-radius: 10px;
+	}
 
 .rebote{
 	
@@ -243,4 +246,40 @@
 
 .box-content{
 	font-size: 18px;
+}
+
+@media only screen and (max-width: 479px)
+.header .logoBSK {
+    width: 103px;
+}
+@media only screen and (max-width: 991px)
+.header .logoBSK {
+    text-align: center;
+    float: none;
+    position: absolute;
+    left: 50%;
+    margin-left: -51px;
+}
+.header .logoBSK, .menu.menu-extra {
+    width: 20%;
+}
+.header .logoBSK, .menu.menu-extra, .nav-wrap {
+    float: left;
+    position: relative;
+}
+.header .logoBSK {
+    width: 180px;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    margin: 35px 0 0 0;
+}
+
+.bsk-fondo-obscuro{
+	borde-radius: 10px;
+	background-color: rgba(20,20,20,0.65);
+	padding: 4px !important;
+	
 }

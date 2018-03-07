@@ -129,11 +129,11 @@ class JMY3WEB extends JMY3MySQL{
 			$this->cargar_js(['url'=>BASE_APP.'js/jmy/jmyWeb.js']); // funciones jmy 
 		}
 		if(file_exists(BASE_TEMPLET.TEMPLET_HEADER)){
-			$header_P = parent::ver([	
-					"TABLA"=>"vistaweb", 		
-					"ID_F"=>PAGE_HEADER
-				]);
-			$header_P = is_array($header_P['ot'])?$header_P['ot'][PAGE_HEADER]:["error"=>"no encontrado"];
+			$this -> cargar([ 	"pagina"=>PAGE_HEADER,
+						 		"tabla"=>"vistaweb", 
+						 		"secundario"=>PAGE_HEADER, 
+							]);
+			//$header_P = is_array($header_P['ot'])?$header_P['ot'][PAGE_HEADER]:["error"=>"no encontrado"];
 			include(BASE_TEMPLET.TEMPLET_HEADER); 
 		}	
 		if(file_exists(BASE_TEMPLET.$d['url'])){
@@ -142,9 +142,13 @@ class JMY3WEB extends JMY3MySQL{
 			if(file_exists(BASE_TEMPLET.'error404.php'))
 				include(BASE_TEMPLET.'error404.php');
 			else
-				echo "error 404 ".$d['url']; 
+				echo "error 404, no se encontro ".$d['url']; 
 		}	
 		if(file_exists(BASE_TEMPLET.TEMPLET_FOOTER)){
+			$this -> cargar([  "pagina"=>PAGE_FOOTER,
+							 	"tabla"=>"vistaweb", 
+							 	"secundario"=>PAGE_FOOTER, 
+							]);
 			include(BASE_TEMPLET.TEMPLET_FOOTER);
 		}
 	}

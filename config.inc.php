@@ -1,6 +1,6 @@
 <?php
 /* RUTAS DE ACCESO */
-define(	"RUTA_ACTUAL","http://test.social.comsis.mx/");  // URL actual del sistema
+define(	"RUTA_ACTUAL","http://local.social.comsis.mx/");  // URL actual del sistema
 define(	"BASE_TEMPLET","templet/"); 			// Ruta donde se aloje el tema o templet
 define(	"BASE_APP","app/"); 					// Ruta de la aplicacion
 define(	"BASE_ARCHIVO","att/"); 				// Ruta a guardar los archivos 
