@@ -166,8 +166,11 @@ class JMY3WEB extends JMY3MySQL{
 		if(is_array($_SESSION['JMY3WEB']['add_js'])){
 			$key = array_keys($_SESSION['JMY3WEB']['add_js']);
 			for($i=0;$i<count($key) ;$i++){
-				if($_SESSION['JMY3WEB']['add_js'][$i]!='')
-					$tmp .= '<script src="'.RUTA_ACTUAL.$_SESSION['JMY3WEB']['add_js'][$key[$i]].'"></script>'; 
+				if($_SESSION['JMY3WEB']['add_js'][$i]!=''){
+					$u=$_SESSION['JMY3WEB']['add_js'][$key[$i]];
+					$u=(strpos($u,'http')===0)?$u:RUTA_ACTUAL.$u;
+					$tmp.='<script src="'.$u.'"></script>'; 
+				}
 				if(in_array($_SESSION['JMY3WEB']['add_js'][$i],$_SESSION['JMY3WEB']['cargar_js_borrar']))
 					unset($_SESSION['JMY3WEB']['add_js'][$i]);
 			}
