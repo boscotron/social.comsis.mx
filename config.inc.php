@@ -35,7 +35,7 @@ define(	"DB_JMY_ADD_TABLA",true); //Agregar Tablas faltantes en la base de datos
 /*MySQL*/
 define(	"DB_HO","localhost"); //servidor
 define(	"DB_US","root"); //usuario
-define(	"DB_PA",""); //contrase�a
+define(	"DB_PA","01568466700"); //contrase�a
 define(	"DB_DB","socialcomsis"); //Base de datos
 
 
