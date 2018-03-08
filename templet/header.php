@@ -71,10 +71,12 @@ $linkWhathsApp ="https://api.whatsapp.com/send?phone=5215513709088&text=Hola,%20
                                 
                                 <li class="address"><a href="+84905010025" class="jmy_web_div" id="header_direccion"  data-editor="no" data-page="header"><?php $this->pnt('header_direccion','<i class="fa fa-map-marker" aria-hidden="true"></i> Mérida Yucatán, México.',["secundario"=>"header"]); ?></a></li>
 
-                                <li class="email jmy_web_div"  id="header_horario" data-page="header" data-editor="no"></li>
+                                <li class="email jmy_web_div"  id="header_horario" data-page="header" data-editor="no"><?php 
+                                $this->pnt('header_horario','<i class="fa fa-clock-o jmy_web_ico" aria-hidden="true"></i> Horario 10 am - 6 pm',["secundario"=>"header"]); ?></li>
                                     
 
-                                <li class="phone jmy_web_div" id="header_telefono" data-page="header" data-editor="no"></li>
+                                <li class="phone jmy_web_div" id="header_telefono" data-page="header" data-editor="no"><?php 
+                                $this->pnt('header_telefono','<i class="fa fa-phone"></i> 585555885',["secundario"=>"header"]); ?></li>
 
 
 

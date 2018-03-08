@@ -14,8 +14,9 @@ if(in_array('pre',$pet)){
 		echo $jmyWeb ->cargar_vista(["url"=>"servicios-detalles.php","data"=>$out]);	
 	}else{
 		$out = $jmyWeb->cargar(["pagina"=>"inicio"]);
+		//$jmyWeb ->pre(['p'=>$out,'t'=>'TITULO_ARAY']);
 		$out = $print[ot]['inicio'];
-		echo $jmyWeb ->cargar_vista(["url"=>"servicios.php","data"=>$out]);
+		$jmyWeb ->cargar_vista(["url"=>"servicios.php","data"=>$out]);
 	}
 }
 ?>
