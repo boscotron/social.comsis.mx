@@ -242,6 +242,8 @@ ul.portfolio-filter > li {
 }
 
 ul.portfolio-filter > li .filter-tooltip {
+    
+    width: 150px;
     position: absolute;
     left: 50%;
     margin-left: -20px;

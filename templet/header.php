@@ -131,6 +131,7 @@ $linkWhathsApp ="https://api.whatsapp.com/send?phone=5215513709088&text=Hola,%20
                                                     <li><a href="<?php $this->url_inicio(); ?>paquetes/paquete-empresa">Paquete Empresa</a></li>
                                                     <li><a href="<?php $this->url_inicio(); ?>paquetes/paquete-web">Paquete Web</a></li>
                                                     <li><a href="<?php $this->url_inicio(); ?>paquetes/paquete-e-commerce">Paquete E-Commerce</a></li>
+                                                    <li><a href="<?php $this->url_inicio(); ?>paquetes/paquete-pizza">Paquete Pizza</a></li>
                                                 </ul>
                                             </li>
                                             <li><a href="<?php $this->url_inicio(); ?>contacto">Contacto</a></li>
